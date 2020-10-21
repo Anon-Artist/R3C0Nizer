@@ -35,7 +35,6 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "Thanks to Tomnomnom, D3LT4, OWASP, Project Discovery, etc.." 
 echo "${blue} [+] Started Subdomain Discovery ${reset}"
 echo " "
 
