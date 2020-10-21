@@ -8,6 +8,12 @@ blue=`tput setaf 4`
 magenta=`tput setaf 5`
 reset=`tput sgr0`
 
+#argument
+if [[ -z $1 ]]; then
+	echo -e "$red Usage: ./reconizer.sh <domain.com>"
+	exit 1
+fi
+
 if [ -d ~/recon/ ]
 then
   echo " "
@@ -164,6 +170,24 @@ fi
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
 echo "${blue} [+] Successfully saved to screenshots"
+
+=======
+#nuclei
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+if [ -f ~/go/bin/nuclei ]
+then
+ echo "${magenta} [+] Running nuclei ${reset}"
+ nuclei -update-templates
+ nuclei -l ~/recon/$1/unique.txt -t cves/ -t files/ -o ~/recon/$1/nuclei_results.txt
+else
+  echo "${blue} [+] Installing nuclei ${reset}"
+  echo "${magenta} [+] Running nuclei ${reset}"
+  go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+  nuclei -update-templates
+nuclei -l ~/recon/$1/unique.txt -t cves/ -t files/ -o ~/recon/$1/nuclei_results.txt
+fi
+echo " "
 
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
