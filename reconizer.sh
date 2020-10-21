@@ -140,6 +140,22 @@ cat ~/recon/$1/unique.txt
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
 echo "${blue} [+] Succesfully saved to unique.txt ${reset}"
+#nuclei
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+if [ -f ~/go/bin/nuclei ]
+then
+ echo "${magenta} [+] Running nuclei ${reset}"
+ nuclei -update-templates
+ nuclei -l ~/recon/$1/unique.txt -t cves/ -t files/ -o ~/recon/$1/nuclei_results.txt
+else
+  echo "${blue} [+] Installing nuclei ${reset}"
+  echo "${magenta} [+] Running nuclei ${reset}"
+  go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+  nuclei -update-templates
+nuclei -l ~/recon/$1/unique.txt -t cves/ -t files/ -o ~/recon/$1/nuclei_results.txt
+fi
+echo " "
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
