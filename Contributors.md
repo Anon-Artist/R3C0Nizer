@@ -7,7 +7,7 @@ This file contains the list of everyone who contributed to the repository
     <td><img src="https://avatars.githubusercontent.com/blackmarketer?s=100">
     <br>
     <a href="https://github.com/blackmarketer">Alan Abhilash</a></td>
-    <td><a href="https://github.com/blackmarketer/contributors.md/commits?author=blackmarketer">Contributions</a> by Alan Abhilash</td>
+    <td><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/1">Contributions</a> by Alan Abhilash</td>
   </tr>
 </table>
 <br>
