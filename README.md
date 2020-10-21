@@ -42,3 +42,9 @@ This script makes use of tools developed by the following people
 
 * Contributions are accepted 
 * Details of every Contributors are added to Contributors.md file.
+
+-------
+
+***Support this project by starring ⭐, sharing 📲, and contributing 👩‍💻! :heart:***
+
+-------
