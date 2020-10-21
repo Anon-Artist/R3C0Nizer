@@ -134,6 +134,24 @@ cat ~/recon/$1/unique.txt
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
 echo "${blue} [+] Succesfully saved to unique.txt ${reset}"
+
+#ParamSpider
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+if [ -d ~/tools/ParamSpider/ ]
+then
+  echo "${magenta} [+] Running ParamSpider ${reset}"
+    python ~/tools/ParamSpider/paramspider.py -d $1 -t 10 -v -o ~/recon/$1/paramspider.txt > /dev/null
+else
+  echo "${blue} [+] Installing ParamSpider ${reset}"
+  echo "${magenta} [+] Running ParamSpider ${reset}"
+  git clone https://github.com/devanshbatham/ParamSpider ~/tools/ParamSpider/
+  python ~/tools/ParamSpider/paramspider.py -d $1 -t 10 -v -o ~/recon/$1/paramspider.txt > /dev/null
+fi
+echo " "
+echo "${blue} [+] Succesfully saved to paramspider.txt  ${reset}"
+echo " "
+
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
