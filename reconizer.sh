@@ -8,6 +8,12 @@ blue=`tput setaf 4`
 magenta=`tput setaf 5`
 reset=`tput sgr0`
 
+#argument
+if [[ -z $1 ]]; then
+	echo -e "$red Usage: ./reconizer.sh <domain.com>"
+	exit 1
+fi
+
 if [ -d ~/recon/ ]
 then
   echo " "
