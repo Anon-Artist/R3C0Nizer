@@ -134,6 +134,38 @@ cat ~/recon/$1/unique.txt
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
 echo "${blue} [+] Succesfully saved to unique.txt ${reset}"
+
+#sorting alive subdomains
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${red} [+] sorting alive subdomains ${reset}"
+echo ""
+cat ~/recon/$1/unique.txt | httpx >> ~/recon/$1/all-unique-alive-subs.txt
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo ""
+echo "${blue} [+] Successfully saved to all-unique-alive-subs.txt"
+
+#screenshotting
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${red} [+] Screenshotting alive subs ${reset}"
+echo ""
+mkdir ~/recon/$1/screenshots
+if [ -f ~/go/bin/aquatone ]
+then
+  echo "${magenta} [+] Running Aquatone ${reset}"
+    cat ~/recon/$1/all-unique-alive-subs.txt | aquatone -out ~/recon/$1/screenshots 
+else
+  echo "${blue} [+] Installing Aquatone ${reset}"
+  go get -u github.com/michenriksen/aquatone
+  echo "${magenta} [+] Running Aquatone ${reset}"
+  cat ~/recon/$1/all-unique-alive-subs.txt | aquatone -out ~/recon/$1/screenshots 
+fi
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo ""
+echo "${blue} [+] Successfully saved to screenshots"
+
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+
