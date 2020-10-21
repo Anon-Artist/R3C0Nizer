@@ -8,6 +8,12 @@ blue=`tput setaf 4`
 magenta=`tput setaf 5`
 reset=`tput sgr0`
 
+#argument
+if [[ -z $1 ]]; then
+	echo -e "$red Usage: ./reconizer.sh <domain.com>"
+	exit 1
+fi
+
 if [ -d ~/recon/ ]
 then
   echo " "
@@ -150,8 +156,55 @@ else
 fi
 echo " "
 echo "${blue} [+] Succesfully saved to paramspider.txt  ${reset}"
+
+#sorting alive subdomains
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${red} [+] sorting alive subdomains ${reset}"
+echo ""
+cat ~/recon/$1/unique.txt | httpx >> ~/recon/$1/all-unique-alive-subs.txt
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo ""
+echo "${blue} [+] Successfully saved to all-unique-alive-subs.txt"
+
+#screenshotting
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${red} [+] Screenshotting alive subs ${reset}"
+echo ""
+mkdir ~/recon/$1/screenshots
+if [ -f ~/go/bin/aquatone ]
+then
+  echo "${magenta} [+] Running Aquatone ${reset}"
+    cat ~/recon/$1/all-unique-alive-subs.txt | aquatone -out ~/recon/$1/screenshots 
+else
+  echo "${blue} [+] Installing Aquatone ${reset}"
+  go get -u github.com/michenriksen/aquatone
+  echo "${magenta} [+] Running Aquatone ${reset}"
+  cat ~/recon/$1/all-unique-alive-subs.txt | aquatone -out ~/recon/$1/screenshots 
+fi
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo ""
+echo "${blue} [+] Successfully saved to screenshots"
+
+#nuclei
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+if [ -f ~/go/bin/nuclei ]
+then
+ echo "${magenta} [+] Running nuclei ${reset}"
+ nuclei -update-templates
+ nuclei -l ~/recon/$1/unique.txt -t cves/ -t files/ -o ~/recon/$1/nuclei_results.txt
+else
+  echo "${blue} [+] Installing nuclei ${reset}"
+  echo "${magenta} [+] Running nuclei ${reset}"
+  go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+  nuclei -update-templates
+nuclei -l ~/recon/$1/unique.txt -t cves/ -t files/ -o ~/recon/$1/nuclei_results.txt
+fi
 echo " "
 
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+
