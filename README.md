@@ -13,8 +13,8 @@
 
 # About
 
-* R3C0Nizer is a script written in Bash, Which was a subdomain enumeration tool, which is growing and is used for Automated scanning with latest updated, fastest and efficient tools.
-  This is a script which automatically install every tools mentioned below in its first run.
+* R3C0Nizer is a script written in Bash, Which was a subdomain enumeration tool, Now is a growing first ever CLI based Menu driven Automated scanner with latest updated, fastest and efficient tools.
+  and this script also install every tools mentioned below automatically in its first run.
 
 # Tools
 
