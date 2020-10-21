@@ -9,11 +9,11 @@
 
 # Usage
 
-`./reconizer.sh domain.com`
+`./reconizer.sh`
 
 # About
 
-* R3C0Nizer is a script written in Bash, Which is used for finding subdomain using multiple subdomain enumeration tools.
+* R3C0Nizer is a script written in Bash, Which was a subdomain enumeration tool, which is growing and is used for Automated scanning with latest updated, fastest and efficient tools.
   This is a script which automatically install every tools mentioned below in its first run.
 
 # Tools
@@ -23,10 +23,19 @@
 - findomain
 - subfinder
 - sublist3r
+- httpx
+- aquatone
+- paramspider
+- nuclei
+
+# Prerequisites
+
+- GO
+- Python3
 
 # Expecting Contributions
 
-* As i said R3C0Nizer is now a subdomain enumeration tool so this baby script needs some modification and contributions for improving the script such as content discovery, subdomain takeover,visual reconing, port scanning etc with the help of latest updated, fastest and efficient tools. 
+* As i said R3C0Nizer is an enumeration tool so this baby script needs some modification and contributions for improving the script such as content discovery, subdomain takeover,visual reconing, port scanning etc with the help of latest updated, fastest and efficient tools. 
       
 # Authors and Thanks
 
@@ -37,6 +46,8 @@ This script makes use of tools developed by the following people
 - https://github.com/GovindPalakkal
 - https://github.com/Findomain
 - https://github.com/projectdiscovery
+- https://github.com/michenriksen
+- https://github.com/devanshbatham
 
 # Contributions
 
