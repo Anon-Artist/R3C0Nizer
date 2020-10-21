@@ -45,6 +45,11 @@ function nucleicall {
 	bash src/nucleicall.sh
 }
 
+function ntlm_recon {
+	clear
+	bash src/ntlm_recon.sh
+}
+
 while [ 1 ]
 do
 	menu
@@ -62,6 +67,9 @@ do
 	
 	4)
 	nucleicall ;;
+	
+	5)
+	ntlm_recon ;;
 
 	*)
 	clear
