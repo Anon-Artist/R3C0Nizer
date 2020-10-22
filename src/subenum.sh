@@ -63,12 +63,12 @@ echo " "
 if [ -f ~/go/bin/amass ]
 then
   echo "${magenta} [+] Running Amass ${reset}"
-  sudo  amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
+  amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
 else
   echo "${blue} [+] Installing Amass ${reset}"
   go get -u github.com/OWASP/Amass/...
   echo "${magenta} [+] Running Amass ${reset}"
-  sudo amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
+  amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
 fi
 echo " "
 echo "${blue} [+] Succesfully saved to amass.txt  ${reset}"
@@ -132,11 +132,9 @@ echo " "
 echo "${red} [+] fetching unique domains ${reset}"
 echo ""
 cat ~/recon/$DOM/assetfinder.txt ~/recon/$DOM/amass.txt ~/recon/$DOM/subfinder.txt ~/recon/$DOM/findomain.txt ~/recon/$DOM/sublist3r.txt | sort -u >> ~/recon/$DOM/unique.txt
-cat ~/recon/$DOM/unique.txt
+echo "${blue} [+] Succesfully saved to unique.txt ${reset}"
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
-echo ""
-echo "${blue} [+] Succesfully saved to unique.txt ${reset}"
