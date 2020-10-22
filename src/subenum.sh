@@ -49,8 +49,8 @@ then
   assetfinder -subs-only $DOM  >> ~/recon/$DOM/assetfinder.txt 
 else
   echo "${blue} [+] Installing Assetfinder ${reset}"
-  echo "${magenta} [+] Running Assetfinder ${reset}"
   go get -u github.com/tomnomnom/assetfinder
+  echo "${magenta} [+] Running Assetfinder ${reset}"
   assetfinder -subs-only $DOM  >> ~/recon/$DOM/assetfinder.txt
 fi
 echo " "
@@ -60,14 +60,14 @@ echo " "
 #amass
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -d ~/tools/Amass/ ]
+if [ -f ~/go/bin/amass ]
 then
   echo "${magenta} [+] Running Amass ${reset}"
   sudo  amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
 else
   echo "${blue} [+] Installing Amass ${reset}"
+  go get -u github.com/OWASP/Amass/...
   echo "${magenta} [+] Running Amass ${reset}"
-  sudo git clone https://github.com/OWASP/Amass.git ~/tools/Amass
   sudo amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
 fi
 echo " "
@@ -83,8 +83,8 @@ then
     subfinder -d $DOM -o ~/recon/$DOM/subfinder.txt 
 else
   echo "${blue} [+] Installing Subfinder ${reset}"
-  echo "${magenta} [+] Running Subfinder ${reset}"
   go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+  echo "${magenta} [+] Running Subfinder ${reset}"
   subfinder -d $DOM -o ~/recon/$DOM/subfinder.txt
 fi
 echo " "
@@ -94,14 +94,14 @@ echo " "
 #find-domain
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -f ~/findomain-linux ]
+if [ -f ~/tools/findomain/findomain-linux ]
 then
   echo "${magenta} [+] Running Findomain ${reset}"
     findomain-linux --target $DOM -u ~/recon/$DOM/findomain.txt
 else
   echo "${blue} [+] Installing Findomain ${reset}"
-  wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
-  chmod +x findomain-linux
+  wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux -P ~/tools/findomain/
+  chmod +x ~/tools/findomain/findomain-linux
   echo "${magenta} [+] Running Findomain ${reset}"
   findomain-linux --target $DOM -u ~/recon/$DOM/findomain.txt
 fi
