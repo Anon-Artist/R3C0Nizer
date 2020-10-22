@@ -119,7 +119,7 @@ then
 else
   echo "${blue} [+] Installing Sublist3r ${reset}"
   echo "${magenta} [+] Running Sublist3r ${reset}"
-  git clone https://github.com/aboul3la/Sublist3r.git ~/tools/Sublist3r/
+  sudo git clone https://github.com/aboul3la/Sublist3r.git ~/tools/Sublist3r/
   python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/sublist3r.txt > /dev/null
 fi
 echo " "
