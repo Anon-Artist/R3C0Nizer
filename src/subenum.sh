@@ -148,7 +148,6 @@ else
   echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
   cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/all-alive-subs.txt
 fi
-echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${blue} [+] Successfully saved to all-alive-subs.txt"
 echo " "
