@@ -49,11 +49,18 @@ This script makes use of tools developed by the following people
 - https://github.com/michenriksen
 - https://github.com/devanshbatham
 
-# Contributions
+# Contributions ⭐
 
 * Contributions are accepted 
-* Details of every Contributors are added to Contributors.md file.
+* Details of every Contributors.
 
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/blackmarketer"><img src="https://avatars.githubusercontent.com/blackmarketer?s=100" width="100px;" alt=""/><br /><sub><b>Alan Abhilash</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/1">Contributions</h6></a></td>
+   <td align="center"><a href="https://github.com/E-R-R-O-R-404"><img src="https://avatars.githubusercontent.com/E-R-R-O-R-404?s=100" width="100px;" alt=""/><br /><sub><b>Vimal V</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/2">Contributions</h6></a></td>
+   <td align="center"><a href="https://github.com/Conscript-Security"><img src="https://avatars.githubusercontent.com/Conscript-Security?s=100" width="100px;" alt=""/><br /><sub><b>Jagan</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/4">Contributions</h6></a></td>
+   <td align="center"><a href="https://github.com/v1nc1d4"><img src="https://avatars.githubusercontent.com/v1nc1d4?s=100" width="100px;" alt=""/><br /><sub><b>Anurag M</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/5">Contributions</h6></a></td>
+</table>
 -------
 
 ***Support this project by starring ⭐, sharing 📲, and contributing 👩‍💻! :heart:***
