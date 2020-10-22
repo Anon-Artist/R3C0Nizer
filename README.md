@@ -9,9 +9,7 @@
 
 # Usage
 
-`git clone https://github.com/Anon-Artist/R3C0Nizer
-chmod +x reconizer.sh
-./reconizer.sh`
+`./reconizer.sh`
 
 # About
 
