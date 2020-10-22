@@ -45,39 +45,22 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Started Sorting Alive Subdomains and Visual Recon ${reset}"
+echo "${blue} [+] Starting Visual Recon ${reset}"
 echo " "
-
-#sorting alive subdomains
-echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
-echo " "
-if [ -f ~/go/bin/httpx ]
-then
-  echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
-cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt
-else
-  echo "${blue} [+] Installing Httpx ${reset}"
-  go get -u github.com/projectdiscovery/httpx/cmd/httpx
-  echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
-  cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt
-fi
-echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
-echo ""
-echo "${blue} [+] Successfully saved to all-unique-alive-subs.txt"
 
 #screenshotting
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-mkdir ~/recon/$DOM/Visual_Recon/screenshots
+mkdir ~/recon/$DOM/Visual_Recon
 if [ -f ~/go/bin/aquatone ]
 then
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  cat ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon/screenshots
+  cat ~/recon/$DOM/all-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon
 else
   echo "${blue} [+] Installing Aquatone ${reset}"
   go get github.com/michenriksen/aquatone
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  cat ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon/screenshots
+  cat ~/recon/$DOM/all-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon
 fi
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
