@@ -57,7 +57,7 @@ then
 else
   echo "${blue} [+] Installing ParamSpider ${reset}"
   echo "${magenta} [+] Running ParamSpider ${reset}"
-  git clone https://github.com/devanshbatham/ParamSpider ~/tools/ParamSpider/
+  sudo git clone https://github.com/devanshbatham/ParamSpider ~/tools/ParamSpider/
   python3 ~/tools/ParamSpider/paramspider.py -d $DOM -o ~/recon/$DOM/Param_mining/paramspider.txt
 fi
 echo " "
