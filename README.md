@@ -52,8 +52,12 @@ This script makes use of tools developed by the following people
 # Contributions
 
 * Contributions are accepted 
-* Details of every Contributors are added to Contributors.md file.
+* Details of every Contributors.
 
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/blackmarketer"><img src="https://avatars.githubusercontent.com/blackmarketer?s=100" width="100px;" alt=""/><br /><sub><b>Alan Abhilash</b></sub></a><br /><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/1" title="Tutorials">✅</a></td>
+</table>
 -------
 
 ***Support this project by starring ⭐, sharing 📲, and contributing 👩‍💻! :heart:***
