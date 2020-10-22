@@ -58,6 +58,7 @@ This script makes use of tools developed by the following people
   <tr>
     <td align="center"><a href="https://github.com/blackmarketer"><img src="https://avatars.githubusercontent.com/blackmarketer?s=100" width="100px;" alt=""/><br /><sub><b>Alan Abhilash</b></sub></a><br /><h6><small><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/1" title="Tutorials">Contributions</small></h6></a></td>
    <td align="center"><a href="https://github.com/E-R-R-O-R-404"><img src="https://avatars.githubusercontent.com/E-R-R-O-R-404?s=100" width="100px;" alt=""/><br /><sub><b>Vimal V</b></sub></a><br /><h6><small><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/2" title="Tutorials">Contributions</small></h6></a></td>
+   <td align="center"><a href="https://github.com/Conscript-Security"><img src="https://avatars.githubusercontent.com/Conscript-Security?s=100" width="100px;" alt=""/><br /><sub><b>Jagan</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/4" title="Tutorials">Contributions</h6></a></td>
 </table>
 -------
 
