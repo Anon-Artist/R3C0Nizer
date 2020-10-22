@@ -69,17 +69,17 @@ echo "${blue} [+] Successfully saved to all-unique-alive-subs.txt"
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 mkdir ~/recon/$DOM/Visual_Recon/screenshots
-if [ -d ~/tools/Eye_Witness ]
+if [ -f ~/go/bin/aquatone ]
 then
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  python3 ~/tools/Eye_Witness/EyeWitness.py -f ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt -d ~/recon/$DOM/Visual_Recon/screenshots
+  cat ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon/screenshots
 else
-  echo "${blue} [+] Installing Eye Witness ${reset}"
-  sudo git clone https://github.com/FortyNorthSecurity/EyeWitness ~/tools/Eye_Witness
-  sudo bash ~/tools/Eye_Witness/Python/setup/setup.sh
+  echo "${blue} [+] Installing Aquatone ${reset}"
+  go get github.com/michenriksen/aquatone
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  python3 ~/tools/Eye_Witness/EyeWitness.py -f ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt -d ~/recon/$DOM/Visual_Recon/screenshots 
+  cat ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon/screenshots
 fi
+
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
 echo "${blue} [+] Successfully saved to screenshots"
