@@ -20,6 +20,7 @@ ${reset}\n"
 	echo -e "\t2. Sorting alive subdomains and Visual Recon"
 	echo -e "\t3. Parameter Mining"
 	echo -e "\t4. Nuclei"
+	echo -e "\t5. lazyrec"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -44,6 +45,11 @@ function nucleicall {
 	clear
 	bash src/nucleicall.sh
 }
+function lazyrec {
+	clear
+	read -p "Enter The 'domain.com' = " domain
+	bash src/lazyrecon.sh -d $domain
+}
 
 while [ 1 ]
 do
@@ -62,6 +68,9 @@ do
 	
 	4)
 	nucleicall ;;
+
+	5)
+	lazyrec;;
 
 	*)
 	clear
