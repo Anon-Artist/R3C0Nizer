@@ -39,7 +39,8 @@
 
 # Expecting Contributions
 
-As i said R3C0Nizer is now a baby script, which need some modification and contributions for improving the script such as 
+R3C0Nizer is now a baby script, which need some modification and contributions for improving the script such as 
+
  - Adding more assets
  - Resolving and Port scanning
  - Archive based scans
@@ -64,9 +65,8 @@ This script makes use of tools developed by the following people
 - https://github.com/michenriksen
 - https://github.com/devanshbatham
 
-# Contributions ⭐
-
-* Contributions are accepted 
+# Contributors ⭐
+ 
 * Details of Contributors:
 
 <table>
