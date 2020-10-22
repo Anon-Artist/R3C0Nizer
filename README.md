@@ -49,7 +49,8 @@ As i said R3C0Nizer is now a baby script, which need some modification and contr
  - Content discovery
  - Subdomain takeover
  - Attack Vector based scans
-etc with the help of latest updated, fastest and efficient tools. 
+
+etc.. with the help of latest updated, fastest and efficient tools. 
       
 # Authors and Thanks
 
