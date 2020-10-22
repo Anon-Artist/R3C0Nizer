@@ -72,7 +72,7 @@ mkdir ~/recon/$DOM/Visual_Recon/screenshots
 if [ -d ~/tools/Eye_Witness ]
 then
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  ./EyeWitness.py -f ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt --timeout 8 -v ~/recon/$DOM/Visual_Recon/screenshots
+  python ~/tools/Eye_Witness/EyeWitness.py -f ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt --timeout 8 -v ~/recon/$DOM/Visual_Recon/screenshots
 else
   echo "${blue} [+] Installing Eye Witness ${reset}"
   sudo git clone https://github.com/FortyNorthSecurity/EyeWitness ~/tools/Eye_Witness
