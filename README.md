@@ -39,16 +39,16 @@
 
 # Expecting Contributions
 
-* As i said R3C0Nizer is now a baby script, which need some modification and contributions for improving the script such as 
-- Adding more assets
-- Resolving and Port scanning
-- Archive based scans
-- Data storage Buckets based scans
-- Github based scans
-- JS based scans
-- Content discovery
-- Subdomain takeover
-- Attack Vector based scans
+As i said R3C0Nizer is now a baby script, which need some modification and contributions for improving the script such as 
+ - Adding more assets
+ - Resolving and Port scanning
+ - Archive based scans
+ - Data storage Buckets based scans
+ - Github based scans
+ - JS based scans
+ - Content discovery
+ - Subdomain takeover
+ - Attack Vector based scans
 etc with the help of latest updated, fastest and efficient tools. 
       
 # Authors and Thanks
