@@ -56,7 +56,7 @@ then
   echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
 cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt
 else
-  echo "${blue} [+] Installing Aquatone ${reset}"
+  echo "${blue} [+] Installing Httpx ${reset}"
   go get -u github.com/projectdiscovery/httpx/cmd/httpx
   echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
   cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/Visual_Recon/all-unique-alive-subs.txt
