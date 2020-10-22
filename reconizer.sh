@@ -20,6 +20,7 @@ ${reset}\n"
 	echo -e "\t2. Sorting alive subdomains and Visual Recon"
 	echo -e "\t3. Parameter Mining"
 	echo -e "\t4. Nuclei"
+	echo -e "\t6. sandcastle"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -45,6 +46,11 @@ function nucleicall {
 	bash src/nucleicall.sh
 }
 
+function sandcastle {
+	clear
+	bash src/sandcastle.sh
+}
+
 while [ 1 ]
 do
 	menu
@@ -62,6 +68,9 @@ do
 	
 	4)
 	nucleicall ;;
+	
+	6)
+	sandcastle ;;
 
 	*)
 	clear
