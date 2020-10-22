@@ -18,15 +18,19 @@
 
 # Tools
 
-- assetfinder
-- amass
-- findomain
-- subfinder
-- sublist3r
-- httpx
-- aquatone
-- paramspider
-- nuclei
+- Subdomain Enumeration
+  - assetfinder
+  - amass
+  - findomain
+  - subfinder
+  - sublist3r
+- Sorting Live Subdomains
+  - httpx
+- Visual Recon
+  - aquatone
+- Others
+  - paramspider
+  - nuclei
 
 # Prerequisites
 
@@ -35,7 +39,17 @@
 
 # Expecting Contributions
 
-* As i said R3C0Nizer is an enumeration tool so this baby script needs some modification and contributions for improving the script such as content discovery, subdomain takeover,visual reconing, port scanning etc with the help of latest updated, fastest and efficient tools. 
+* As i said R3C0Nizer is now a baby script, which need some modification and contributions for improving the script such as 
+- Adding more assets
+- Resolving and Port scanning
+- Archive based scans
+- Data storage Buckets based scans
+- Github based scans
+- JS based scans
+- Content discovery
+- Subdomain takeover
+- Attack Vector based scans
+etc with the help of latest updated, fastest and efficient tools. 
       
 # Authors and Thanks
 
@@ -52,7 +66,7 @@ This script makes use of tools developed by the following people
 # Contributions ⭐
 
 * Contributions are accepted 
-* Details of every Contributors.
+* Details of Contributors:
 
 <table>
   <tr>
@@ -61,6 +75,7 @@ This script makes use of tools developed by the following people
    <td align="center"><a href="https://github.com/Conscript-Security"><img src="https://avatars.githubusercontent.com/Conscript-Security?s=100" width="100px;" alt=""/><br /><sub><b>Jagan</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/4">Contributions</h6></a></td>
    <td align="center"><a href="https://github.com/v1nc1d4"><img src="https://avatars.githubusercontent.com/v1nc1d4?s=100" width="100px;" alt=""/><br /><sub><b>Anurag M</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/5">Contributions</h6></a></td>
 </table>
+
 -------
 
 ***Support this project by starring ⭐, sharing 📲, and contributing 👩‍💻! :heart:***
