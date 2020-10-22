@@ -130,9 +130,29 @@ echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${red} [+] fetching unique domains ${reset}"
-echo ""
+echo " "
 cat ~/recon/$DOM/assetfinder.txt ~/recon/$DOM/amass.txt ~/recon/$DOM/subfinder.txt ~/recon/$DOM/findomain.txt ~/recon/$DOM/sublist3r.txt | sort -u >> ~/recon/$DOM/unique.txt
 echo "${blue} [+] Succesfully saved to unique.txt ${reset}"
+echo " "
+
+#sorting alive subdomains
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+if [ -f ~/go/bin/httpx ]
+then
+  echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
+cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/all-alive-subs.txt
+else
+  echo "${blue} [+] Installing Httpx ${reset}"
+  go get -u github.com/projectdiscovery/httpx/cmd/httpx
+  echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
+  cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/all-alive-subs.txt
+fi
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${blue} [+] Successfully saved to all-alive-subs.txt"
+echo " "
+
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
