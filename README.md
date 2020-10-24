@@ -27,7 +27,7 @@
 - Sorting Live Subdomains
   - httpx
 - Content Discovery
-  - dirsearch
+  - feroxbuster
 - Visual Recon
   - aquatone
 - Others
