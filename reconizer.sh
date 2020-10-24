@@ -18,8 +18,9 @@ reset=`tput sgr0`
 ${reset}\n"
 	echo -e "\t1. Subdomain enumeration"
 	echo -e "\t2. Sorting alive subdomains and Visual Recon"
-	echo -e "\t3. Parameter Mining"
-	echo -e "\t4. Nuclei"
+	echo -e "\t3. Content Discovery"
+	echo -e "\t4. Parameter Mining"
+	echo -e "\t5. Nuclei"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -44,6 +45,10 @@ function nucleicall {
 	clear
 	bash src/nucleicall.sh
 }
+function contentdisc {
+        clear
+        bash src/contentdiscovery.sh 
+}
 
 while [ 1 ]
 do
@@ -56,11 +61,14 @@ do
 
 	2)
 	visualrecon ;;
-
+	
 	3)
+	contentdisc;;
+
+	4)
 	paramining ;;
 	
-	4)
+	5)
 	nucleicall ;;
 
 	*)
