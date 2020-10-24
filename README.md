@@ -33,6 +33,8 @@
 - Others
   - paramspider
   - nuclei
+- Wordlists
+  - common.txt by dirb
 
 # Prerequisites
 
@@ -58,10 +60,12 @@ etc.. with the help of latest updated, fastest and efficient tools.
 
 This script makes use of tools developed by the following people
 - https://github.com/tomnomnom
+- https://github.com/epi052
 - https://github.com/aboul3la
 - https://github.com/OWASP
 - https://github.com/GovindPalakkal
 - https://github.com/Findomain
+- https://github.com/v0re
 - https://github.com/projectdiscovery
 - https://github.com/michenriksen
 - https://github.com/devanshbatham
