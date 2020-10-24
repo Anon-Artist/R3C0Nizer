@@ -26,11 +26,11 @@ else
  
 fi
  
-if [ -d ~/recon/$DOM/dirsearch ]
+if [ -d ~/recon/$DOM/feroxbuster ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM/dirsearch
+  mkdir ~/recon/$DOM/feroxbuster
  
 fi
  
@@ -51,34 +51,23 @@ echo " "
 #nuclei
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -d ~/tools/dirsearch/ ]
+if [ -f /usr/bin/feroxbuster ]
 then
-  echo "${magenta} [+]  Content Discovery ${reset}"
-  for url in $(cat ~/recon/$DOM/all-alive-subs.txt);do
-  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
-  python3 ~/tools/dirsearch/dirsearch.py -u $url -e php,asp,aspx,jsp,py,txt,conf,config,bak,backup,swp,old,db,zip,sql -w ~/tools/wordlists/common.txt -x 429,400,503 -f --random-agents -t 300 --max-retries=3 -b -r --plain-text-report=~/tools/dirsearch/$reg.tmp
-  if [ ! -s ~/tools/dirsearch/$reg.tmp ]; then
-            rm ~/tools/dirsearch/$reg.tmp
-        else
-            cat ~/tools/dirsearch/$reg.tmp | sort -k 1 -n > ~/tools/dirsearch/$reg.txt
-            rm ~/tools/dirsearch/$reg.tmp
-        fi
-    done
+ echo "${magenta} [+] Running Feroxbuster ${reset}"
+ for url in $(cat ~/recon/$DOM/all-alive-subs.txt);do
+ reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
+ feroxbuster --url $url -w ~/tools/wordlists/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --threads 300 --output ~/recon/$DOM/Content_Discovery/content_discovery_result.txt
+done
 else
-  echo "${blue} [+] Installing dirsearch ${reset}"
-  git clone https://github.com/maurosoria/dirsearch ~/tools/dirsearch
-  wget https://raw.githubusercontent.com/v0re/dirb/master/wordlists/common.txt -P ~/tools/wordlists
-  echo "${magenta} [+] Running Content Discovery ${reset}"
-  for url in $(cat ~/recon/$DOM/all-alive-subs.txt);do
-  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
-  python3 ~/tools/dirsearch/dirsearch.py -u $url -e php,asp,aspx,jsp,py,txt,conf,config,bak,backup,swp,old,db,zip,sql -w ~/tools/wordlists/common.txt -x 429,400,503 -f --random-agents -t 300 --max-retries=3 -b -r --plain-text-report=~/tools/dirsearch/$reg.tmp
-  if [ ! -s ~/tools/dirsearch/$reg.tmp ]; then
-            rm ~/tools/dirsearch/$reg.tmp
-        else
-            cat ~/tools/dirsearch/$reg.tmp | sort -k 1 -n > ~/tools/dirsearch/$reg.txt
-            rm ~/tools/dirsearch/$reg.tmp
-        fi
-    done
+ echo "${blue} [+] Installing Feroxbuster ${reset}"
+ wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip -P ~/tools/feroxbuster
+ unzip ~/tools/feroxbuster/feroxbuster_amd64.deb.zip -d ~/tools/feroxbuster 
+ sudo apt install ~/tools/feroxbuster/*.deb
+ echo "${magenta} [+] Running Feroxbuster ${reset}"
+ for url in $(cat ~/recon/$DOM/all-alive-subs.txt);do
+ reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
+ feroxbuster --url $url -w ~/tools/wordlists/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --threads 300 --output ~/recon/$DOM/Content_Discovery/content_discovery_result.txt
+done
 fi
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
