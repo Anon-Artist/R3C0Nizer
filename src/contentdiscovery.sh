@@ -68,6 +68,19 @@ else
  for url in $(cat ~/recon/$DOM/all-alive-subs.txt);do
  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
  feroxbuster --url $url -w ~/tools/wordlists/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --threads 300 --output ~/recon/$DOM/Content_Discovery/content_discovery_result.txt
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${magenta} [+] Sorting According to Status Codes ${reset}"
+cat content_discovery_result | grep 200 > status_code_200.txt  
+cat content_discovery_result | grep 204 > status_code_204.txt
+cat content_discovery_result | grep 301 > status_code_301.txt
+cat content_discovery_result | grep 302 > status_code_302.txt
+cat content_discovery_result | grep 307 > status_code_307.txt
+cat content_discovery_result | grep 308 > status_code_308.txt
+cat content_discovery_result | grep 401 > status_code_401.txt
+cat content_discovery_result | grep 403 > status_code_403.txt
+cat content_discovery_result | grep 405 > status_code_405.txt
+echo " "
 done
 fi
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
