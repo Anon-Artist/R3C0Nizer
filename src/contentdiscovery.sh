@@ -60,6 +60,7 @@ then
 done
 else
  echo "${blue} [+] Installing Feroxbuster ${reset}"
+ wget https://raw.githubusercontent.com/v0re/dirb/master/wordlists/common.txt -P ~/tools/wordlists
  wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip -P ~/tools/feroxbuster
  unzip ~/tools/feroxbuster/feroxbuster_amd64.deb.zip -d ~/tools/feroxbuster 
  sudo apt install ~/tools/feroxbuster/*.deb
