@@ -31,7 +31,7 @@ This file contains the list of everyone who contributed to the repository
     <td><img src="https://avatars.githubusercontent.com/Shahul-Aboobaker?s=100">
     <br>
     <a href="https://github.com/Shahul-Aboobaker">Shahul-Aboobaker</a></td>
-    <td><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/11">Contributions</a> by Anurag M</td>
+    <td><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/11">Contributions</a> by Shahul Aboobaker</td>
   </tr>
 </table>
 <br>
