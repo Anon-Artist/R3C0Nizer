@@ -70,16 +70,22 @@ else
  feroxbuster --url $url -w ~/tools/wordlists/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --threads 300 --output ~/recon/$DOM/Content_Discovery/content_discovery_result.txt
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
+echo "${blue} [+] Succesfully saved to content_discovery_result.txt ${reset}"
+echo " "
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
 echo "${magenta} [+] Sorting According to Status Codes ${reset}"
-cat content_discovery_result | grep 200 > status_code_200.txt  
-cat content_discovery_result | grep 204 > status_code_204.txt
-cat content_discovery_result | grep 301 > status_code_301.txt
-cat content_discovery_result | grep 302 > status_code_302.txt
-cat content_discovery_result | grep 307 > status_code_307.txt
-cat content_discovery_result | grep 308 > status_code_308.txt
-cat content_discovery_result | grep 401 > status_code_401.txt
-cat content_discovery_result | grep 403 > status_code_403.txt
-cat content_discovery_result | grep 405 > status_code_405.txt
+cat content_discovery_result | grep 200 | awk '{print $2}' > status_code_200.txt  
+cat content_discovery_result | grep 204 | awk '{print $2}' > status_code_204.txt
+cat content_discovery_result | grep 301 | awk '{print $2}' > status_code_301.txt
+cat content_discovery_result | grep 302 | awk '{print $2}' > status_code_302.txt
+cat content_discovery_result | grep 307 | awk '{print $2}' > status_code_307.txt
+cat content_discovery_result | grep 308 | awk '{print $2}' > status_code_308.txt
+cat content_discovery_result | grep 401 | awk '{print $2}' > status_code_401.txt
+cat content_discovery_result | grep 403 | awk '{print $2}' > status_code_403.txt
+cat content_discovery_result | grep 405 | awk '{print $2}' > status_code_405.txt
+echo " "
+echo "${blue} [+] Succesfully saved According to status Codes ${reset}"
 echo " "
 done
 fi
