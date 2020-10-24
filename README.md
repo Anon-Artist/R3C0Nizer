@@ -75,6 +75,7 @@ This script makes use of tools developed by the following people
    <td align="center"><a href="https://github.com/E-R-R-O-R-404"><img src="https://avatars.githubusercontent.com/E-R-R-O-R-404?s=100" width="100px;" alt=""/><br /><sub><b>Vimal V</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/2">Contributions</h6></a></td>
    <td align="center"><a href="https://github.com/Conscript-Security"><img src="https://avatars.githubusercontent.com/Conscript-Security?s=100" width="100px;" alt=""/><br /><sub><b>Jagan</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/4">Contributions</h6></a></td>
    <td align="center"><a href="https://github.com/v1nc1d4"><img src="https://avatars.githubusercontent.com/v1nc1d4?s=100" width="100px;" alt=""/><br /><sub><b>Anurag M</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/5">Contributions</h6></a></td>
+   <td align="center"><a href="https://github.com/Shahul-Aboobaker"><img src="https://avatars.githubusercontent.com/Shahul-Aboobaker?s=100" width="100px;" alt=""/><br /><sub><b>Shahul Aboobaker</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/11">Contributions</h6></a></td>
 </table>
 
 -------
