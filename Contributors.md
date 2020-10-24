@@ -27,6 +27,12 @@ This file contains the list of everyone who contributed to the repository
     <a href="https://github.com/v1nc1d4">Anurag M</a></td>
     <td><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/5">Contributions</a> by Anurag M</td>
   </tr>
+  <tr>
+    <td><img src="https://avatars.githubusercontent.com/Shahul-Aboobaker?s=100">
+    <br>
+    <a href="https://github.com/Shahul-Aboobaker">Shahul-Aboobaker</a></td>
+    <td><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/11">Contributions</a> by Anurag M</td>
+  </tr>
 </table>
 <br>
 ### Thanks to everyone who helped in building this Repository :)
