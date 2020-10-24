@@ -26,6 +26,8 @@
   - sublist3r
 - Sorting Live Subdomains
   - httpx
+- Content Discovery
+  - dirsearch
 - Visual Recon
   - aquatone
 - Others
@@ -47,7 +49,6 @@ R3C0Nizer is now a baby script, which need some modification and contributions f
  - Data storage Buckets based scans
  - Github based scans
  - JS based scans
- - Content discovery
  - Subdomain takeover
  - Attack Vector based scans
 
