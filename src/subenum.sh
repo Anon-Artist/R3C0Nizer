@@ -10,6 +10,13 @@ reset=`tput sgr0`
 
 read -p "Enter the Domain name : " DOM
 
+if [ -d ~/reconizer ]
+then
+  echo " "
+else
+  mkdir ~/reconizer 
+fi
+
 if [ -d ~/reconizer/tools ]
 then
   echo " "
