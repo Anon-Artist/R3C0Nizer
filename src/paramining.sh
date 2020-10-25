@@ -57,17 +57,21 @@ echo " "
 if [ -d ~/reconizer/tools/ParamSpider/ ]
 then
   echo "${magenta} [+] Running ParamSpider ${reset}"
-    python3 ~/tools/ParamSpider/paramspider.py -d $DOM -o ~/reconizer/$DOM/Param_mining/paramspider.txt
+  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
+  python3 ~/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
+  done
 else
   echo "${blue} [+] Installing ParamSpider ${reset}"
   echo "${magenta} [+] Running ParamSpider ${reset}"
-  sudo git clone https://github.com/devanshbatham/ParamSpider ~/reconizer/tools/ParamSpider/
-  python3 ~/tools/ParamSpider/paramspider.py -d $DOM -o ~/reconizer/$DOM/Param_mining/paramspider.txt
+  git clone https://github.com/devanshbatham/ParamSpider ~/reconizer/tools/ParamSpider/
+  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
+  python3 ~/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
+  done
 fi
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${blue} [+] Succesfully saved as paramspider.txt  ${reset}"
+echo "${blue} [+] Succesfully saved the results  ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
