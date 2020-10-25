@@ -10,28 +10,32 @@ reset=`tput sgr0`
 
 read -p "Enter domain name : " DOM
 
-if [ -d ~/recon/ ]
+if [ -d ~/reconizer/ ]
 then
   echo " "
 else
-  mkdir ~/recon
-
+  mkdir ~/reconizer
 fi
 
-if [ -d ~/recon/$DOM ]
+if [ -d ~/reconizer/tools ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM
-
+  mkdir ~/reconizer/tools 
 fi
 
-if [ -d ~/recon/$DOM/Param_mining ]
+if [ -d ~/reconizer/$DOM ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM/Param_mining
+  mkdir ~/reconizer/$DOM
+fi
 
+if [ -d ~/reconizer/$DOM/Param_mining ]
+then
+  echo " "
+else
+  mkdir ~/reconizer/$DOM/Param_mining
 fi
 
 
@@ -50,18 +54,22 @@ echo " "
 #ParamSpider
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -d ~/tools/ParamSpider/ ]
+if [ -d ~/reconizer/tools/ParamSpider/ ]
 then
   echo "${magenta} [+] Running ParamSpider ${reset}"
-    python3 ~/tools/ParamSpider/paramspider.py -d $DOM -o ~/recon/$DOM/Param_mining/paramspider.txt
+    python3 ~/tools/ParamSpider/paramspider.py -d $DOM -o ~/reconizer/$DOM/Param_mining/paramspider.txt
 else
   echo "${blue} [+] Installing ParamSpider ${reset}"
   echo "${magenta} [+] Running ParamSpider ${reset}"
-  sudo git clone https://github.com/devanshbatham/ParamSpider ~/tools/ParamSpider/
-  python3 ~/tools/ParamSpider/paramspider.py -d $DOM -o ~/recon/$DOM/Param_mining/paramspider.txt
+  sudo git clone https://github.com/devanshbatham/ParamSpider ~/reconizer/tools/ParamSpider/
+  python3 ~/tools/ParamSpider/paramspider.py -d $DOM -o ~/reconizer/$DOM/Param_mining/paramspider.txt
 fi
 echo " "
-echo "${blue} [+] Succesfully saved to paramspider.txt  ${reset}"
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${blue} [+] Succesfully saved as paramspider.txt  ${reset}"
+echo " "
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
