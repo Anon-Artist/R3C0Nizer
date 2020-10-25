@@ -10,23 +10,29 @@ reset=`tput sgr0`
 
 read -p "Enter domain name : " DOM
 
-if [ -d ~/recon/ ]
+if [ -d ~/reconizer/ ]
 then
   echo " "
 else
-  mkdir ~/recon
-
+  mkdir ~/reconizer
 fi
 
-if [ -d ~/recon/$DOM ]
+if [ -d ~/reconizer/tools ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM
+  mkdir ~/reconizer/tools 
+fi
+
+if [ -d ~/reconizer/$DOM ]
+then
+  echo " "
+else
+  mkdir ~/reconizer/$DOM
 
 fi
 
-if [ -d ~/recon/$DOM/Visual_Recon ]
+if [ -d ~/reconizer/$DOM/Visual_Recon ]
 then
   echo " "
 else
@@ -51,21 +57,21 @@ echo " "
 #screenshotting
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-mkdir ~/recon/$DOM/Visual_Recon
+mkdir ~/reconizer/$DOM/Visual_Recon
 if [ -f ~/go/bin/aquatone ]
 then
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  cat ~/recon/$DOM/all-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon
+  cat ~/reconizer/$DOM/all-alive-subs.txt | aquatone -out ~/reconizer/$DOM/Visual_Recon
 else
   echo "${blue} [+] Installing Aquatone ${reset}"
   go get github.com/michenriksen/aquatone
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  cat ~/recon/$DOM/all-alive-subs.txt | aquatone -out ~/recon/$DOM/Visual_Recon
+  cat ~/reconizer/$DOM/all-alive-subs.txt | aquatone -out ~/reconizer/$DOM/Visual_Recon
 fi
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
-echo "${blue} [+] Successfully saved to screenshots"
+echo "${blue} [+] Successfully saved the results"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
