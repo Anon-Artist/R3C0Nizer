@@ -36,7 +36,7 @@ if [ -d ~/reconizer/$DOM/Visual_Recon ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM/Visual_Recon
+  mkdir ~/reconizer/$DOM/Visual_Recon
 
 fi
 
