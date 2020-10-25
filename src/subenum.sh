@@ -10,25 +10,11 @@ reset=`tput sgr0`
 
 read -p "Enter the Domain name : " DOM
 
-if [ -d ~/reconizer/ ]
-then
-  echo " "
-else
-  mkdir ~/reconizer
-fi
-
 if [ -d ~/reconizer/tools ]
 then
   echo " "
 else
   mkdir ~/reconizer/tools 
-fi
-
-if [ -d ~/reconizer/$DOM ]
-then
-  echo " "
-else
-  mkdir ~/reconizer/$DOM
 fi
 
 if [ -d ~/reconizer/$DOM/Subdomains ]
@@ -127,11 +113,11 @@ echo " "
 if [ -d ~/tools/Sublist3r/ ]
 then
   echo "${magenta} [+] Running Sublist3r ${reset}"
-    python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/Subdomains/sublist3r.txt > /dev/null
+  python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/Subdomains/sublist3r.txt > /dev/null
 else
   echo "${blue} [+] Installing Sublist3r ${reset}"
   echo "${magenta} [+] Running Sublist3r ${reset}"
-  sudo git clone https://github.com/aboul3la/Sublist3r.git ~/reconizer/tools/Sublist3r/
+  git clone https://github.com/aboul3la/Sublist3r.git ~/reconizer/tools/Sublist3r/
   python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/Subdomains/sublist3r.txt > /dev/null
 fi
 echo " "
@@ -158,7 +144,7 @@ else
   echo "${blue} [+] Installing Httpx ${reset}"
   go get -u github.com/projectdiscovery/httpx/cmd/httpx
   echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
-  cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/all-alive-subs.txt
+  cat ~/recon/$DOM/Subdomains/unique.txt | httpx >> ~/recon/$DOM/Subdomains/all-alive-subs.txt
 fi
 echo " "
 echo "${blue} [+] Successfully saved as all-alive-subs.txt"
