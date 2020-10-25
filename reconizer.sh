@@ -17,11 +17,12 @@ reset=`tput sgr0`
  ================== Anon-Artist ==================
 ${reset}\n"
 	echo -e "\t1. Subdomain enumeration"
-	echo -e "\t2. Sorting alive subdomains and Visual Recon"
-	echo -e "\t3. Content Discovery"
-	echo -e "\t4. Parameter Mining"
-	echo -e "\t5. GFPattern"
-	echo -e "\t6. Nuclei"
+	echo -e "\t2. Port Scanning"
+	echo -e "\t3. Visual Recon"
+	echo -e "\t4. Content Discovery"
+	echo -e "\t5. Parameter Mining"
+	echo -e "\t6. GFPattern"
+	echo -e "\t7. Nuclei"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -46,14 +47,22 @@ function nucleicall {
 	clear
 	bash src/nucleicall.sh
 }
+
 function contentdisc {
         clear
         bash src/contentdiscovery.sh 
 }
+
 function GFPattern {
 	clear
 	bash src/GF_Patterns.sh
 }
+
+function portscanning {
+	clear
+	bash src/portscan.sh
+}
+
 while [ 1 ]
 do
 	menu
@@ -64,18 +73,21 @@ do
 	subenum ;;
 
 	2)
+	portscanning ;;
+
+	3)
 	visualrecon ;;
 	
-	3)
+	4)
 	contentdisc;;
 
-	4)
+	5)
 	paramining ;;
 	
-	5)
+	6)
 	GFPattern ;;
 	
-	6)
+	7)
 	nucleicall ;;
 
 	*)
