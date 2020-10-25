@@ -10,20 +10,32 @@ reset=`tput sgr0`
 
 read -p "Enter the Domain name : " DOM
 
-if [ -d ~/recon/ ]
+if [ -d ~/reconizer/ ]
 then
   echo " "
 else
-  mkdir ~/recon
-
+  mkdir ~/reconizer
 fi
 
-if [ -d ~/recon/$DOM ]
+if [ -d ~/reconizer/tools ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM
+  mkdir ~/reconizer/tools 
+fi
 
+if [ -d ~/reconizer/$DOM ]
+then
+  echo " "
+else
+  mkdir ~/reconizer/$DOM
+fi
+
+if [ -d ~/reconizer/$DOM/Subdomains ]
+then
+  echo " "
+else
+  mkdir ~/reconizer/$DOM/Subdomains 
 fi
 
 
@@ -46,15 +58,15 @@ echo " "
 if [ -f ~/go/bin/assetfinder ]
 then
   echo "${magenta} [+] Running Assetfinder ${reset}"
-  assetfinder -subs-only $DOM  >> ~/recon/$DOM/assetfinder.txt 
+  assetfinder -subs-only $DOM  >> ~/recon/$DOM/Subdomains/assetfinder.txt 
 else
   echo "${blue} [+] Installing Assetfinder ${reset}"
   go get -u github.com/tomnomnom/assetfinder
   echo "${magenta} [+] Running Assetfinder ${reset}"
-  assetfinder -subs-only $DOM  >> ~/recon/$DOM/assetfinder.txt
+  assetfinder -subs-only $DOM  >> ~/recon/$DOM/Subdomains/assetfinder.txt
 fi
 echo " "
-echo "${blue} [+] Succesfully saved to assetfinder.txt  ${reset}"
+echo "${blue} [+] Succesfully saved as assetfinder.txt  ${reset}"
 echo " "
 
 #amass
@@ -63,15 +75,15 @@ echo " "
 if [ -f ~/go/bin/amass ]
 then
   echo "${magenta} [+] Running Amass ${reset}"
-  amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
+  amass enum --passive -d $DOM > ~/recon/$DOM/Subdomains/amass.txt
 else
   echo "${blue} [+] Installing Amass ${reset}"
   go get -u github.com/OWASP/Amass/...
   echo "${magenta} [+] Running Amass ${reset}"
-  amass enum --passive -d $DOM > ~/recon/$DOM/amass.txt
+  amass enum --passive -d $DOM > ~/recon/$DOM/Subdomains/amass.txt
 fi
 echo " "
-echo "${blue} [+] Succesfully saved to amass.txt  ${reset}"
+echo "${blue} [+] Succesfully saved as amass.txt  ${reset}"
 echo " "
 
 #subfinder
@@ -80,15 +92,15 @@ echo " "
 if [ -f ~/go/bin/subfinder ]
 then
   echo "${magenta} [+] Running Subfinder ${reset}"
-    subfinder -d $DOM -o ~/recon/$DOM/subfinder.txt 
+    subfinder -d $DOM -o ~/recon/$DOM/Subdomains/subfinder.txt 
 else
   echo "${blue} [+] Installing Subfinder ${reset}"
   go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
   echo "${magenta} [+] Running Subfinder ${reset}"
-  subfinder -d $DOM -o ~/recon/$DOM/subfinder.txt
+  subfinder -d $DOM -o ~/recon/$DOM/Subdomains/subfinder.txt
 fi
 echo " "
-echo "${blue} [+] Succesfully saved to subfinder.txt  ${reset}"
+echo "${blue} [+] Succesfully saved as subfinder.txt  ${reset}"
 echo " "
 
 #find-domain
@@ -97,16 +109,16 @@ echo " "
 if [ -f ~/tools/findomain/findomain-linux ]
 then
   echo "${magenta} [+] Running Findomain ${reset}"
-    findomain-linux --target $DOM -u ~/recon/$DOM/findomain.txt
+    findomain-linux --target $DOM -u ~/recon/$DOM/Subdomains/findomain.txt
 else
   echo "${blue} [+] Installing Findomain ${reset}"
-  wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux -P ~/tools/findomain/
+  wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux -P ~/reconizer/tools/findomain/
   chmod +x ~/tools/findomain/findomain-linux
   echo "${magenta} [+] Running Findomain ${reset}"
-  findomain-linux --target $DOM -u ~/recon/$DOM/findomain.txt
+  findomain-linux --target $DOM -u ~/recon/$DOM/Subdomains/findomain.txt
 fi
 echo " "
-echo "${blue} [+] Succesfully saved to findomain.txt  ${reset}"
+echo "${blue} [+] Succesfully saved as findomain.txt  ${reset}"
 echo " "
 
 #Sublister
@@ -115,24 +127,24 @@ echo " "
 if [ -d ~/tools/Sublist3r/ ]
 then
   echo "${magenta} [+] Running Sublist3r ${reset}"
-    python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/sublist3r.txt > /dev/null
+    python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/Subdomains/sublist3r.txt > /dev/null
 else
   echo "${blue} [+] Installing Sublist3r ${reset}"
   echo "${magenta} [+] Running Sublist3r ${reset}"
-  sudo git clone https://github.com/aboul3la/Sublist3r.git ~/tools/Sublist3r/
-  python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/sublist3r.txt > /dev/null
+  sudo git clone https://github.com/aboul3la/Sublist3r.git ~/reconizer/tools/Sublist3r/
+  python ~/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/recon/$DOM/Subdomains/sublist3r.txt > /dev/null
 fi
 echo " "
-echo "${blue} [+] Succesfully saved to sublist3r.txt  ${reset}"
+echo "${blue} [+] Succesfully saved as sublist3r.txt  ${reset}"
 echo " "
 
 #uniquesubdomains
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] fetching unique domains ${reset}"
+echo "${red} [+] Fetching unique domains ${reset}"
 echo " "
-cat ~/recon/$DOM/assetfinder.txt ~/recon/$DOM/amass.txt ~/recon/$DOM/subfinder.txt ~/recon/$DOM/findomain.txt ~/recon/$DOM/sublist3r.txt | sort -u >> ~/recon/$DOM/unique.txt
-echo "${blue} [+] Succesfully saved to unique.txt ${reset}"
+cat ~/recon/$DOM/Subdomains/assetfinder.txt ~/recon/$DOM/Subdomains/amass.txt ~/recon/$DOM/Subdomains/subfinder.txt ~/recon/$DOM/Subdomains/findomain.txt ~/recon/$DOM/Subdomains/sublist3r.txt | sort -u >> ~/recon/$DOM/Subdomains/unique.txt
+echo "${blue} [+] Succesfully saved as unique.txt ${reset}"
 echo " "
 
 #sorting alive subdomains
@@ -141,7 +153,7 @@ echo " "
 if [ -f ~/go/bin/httpx ]
 then
   echo "${magenta} [+] Sorting Alive Subdomains ${reset}"
-cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/all-alive-subs.txt
+cat ~/recon/$DOM/Subdomains/unique.txt | httpx >> ~/recon/$DOM/Subdomains/all-alive-subs.txt
 else
   echo "${blue} [+] Installing Httpx ${reset}"
   go get -u github.com/projectdiscovery/httpx/cmd/httpx
@@ -149,7 +161,7 @@ else
   cat ~/recon/$DOM/unique.txt | httpx >> ~/recon/$DOM/all-alive-subs.txt
 fi
 echo " "
-echo "${blue} [+] Successfully saved to all-alive-subs.txt"
+echo "${blue} [+] Successfully saved as all-alive-subs.txt"
 echo " "
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
