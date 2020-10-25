@@ -11,12 +11,18 @@ reset=`tput sgr0`
 
 read -p "Enter domain name : " DOM
 
-if [ -d ~/recon/ ]
+if [ -d ~/reconizer/ ]
 then
   echo " "
 else
-  mkdir ~/recon
+  mkdir ~/reconizer
+fi
 
+if [ -d ~/reconizer/tools ]
+then
+  echo " "
+else
+  mkdir ~/reconizer/tools 
 fi
 
 if [ -d ~/recon/$DOM/GF_Pattern ]
@@ -24,7 +30,6 @@ then
   echo " "
 else
   mkdir ~/recon/$DOM/GF_Pattern
-
 fi
 
 
@@ -40,33 +45,35 @@ echo "${red}
 ${reset}"
 echo "${blue} [+] Started URL Fetching ${reset}"
 echo " "
+
 #wayback_URL
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 if [ -f ~/go/bin/waybackurls ]
 then
  echo "${magenta} [+] Running Waybackurls ${reset}"
- cat  ~/recon/$DOM/all-alive-subs.txt | waybackurls >> ~/recon/$DOM/GF_Pattern/wayback.txt 
+ cat  ~/recon/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/recon/$DOM/GF_Pattern/waybackurls.txt 
 else
  echo "${blue} [+] Installing Waybackurls ${reset}"
- go get github.com/tomnomnom/waybackurls
+ go get -u github.com/tomnomnom/waybackurls
  echo "${blue} [+] Started URL Fetching ${reset}"
- cat  ~/recon/$DOM/all-alive-subs.txt | waybackurls >> ~/recon/$DOM/GF_Pattern/wayback.txt 
+ cat  ~/recon/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/recon/$DOM/GF_Pattern/waybackurls.txt 
 fi
 echo " "
-echo "${blue} [+] Succesfully saved to wayback.txt ${reset}"
+echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
 echo " "
-
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
 #Gau
 if [ -f ~/go/bin/gau ]
 then
  echo "${magenta} [+] Running Gau ${reset}"
- cat  ~/recon/$DOM/all-alive-subs.txt | gau  >> ~/recon/$DOM/GF_Pattern/gau.txt
+ cat  ~/recon/$DOM/Subdomains/all-alive-subs.txt | gau  >> ~/recon/$DOM/GF_Pattern/gau.txt
 else
  echo "${blue} [+] Installing Gaus ${reset}"
- GO111MODULE=on go get -u -v github.com/lc/gau
+ go get -u github.com/lc/gau
  echo "${blue} [+] Started URL Fetching ${reset}"
- cat  ~/recon/$DOM/all-alive-subs.txt | gau >> ~/recon/$DOM/GF_Pattern/gau.txt
+ cat  ~/recon/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/recon/$DOM/GF_Pattern/gau.txt
 fi
 echo " "
 echo "${blue} [+] Succesfully saved to gau.txt ${reset}"
@@ -75,32 +82,39 @@ echo " "
 #uniquesubdomains
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] fetching unique URL ${reset}"
+echo "${blue} [+] fetching unique URL ${reset}"
 echo " "
-cat ~/recon/$DOM/GF_Pattern/wayback.txt ~/recon/$DOM/GF_Pattern/gau.txt | sort -u >> ~/recon/$DOM/GF_Pattern/url.txt
-echo "${blue} [+] Succesfully saved to url.txt ${reset}"
+cat ~/recon/$DOM/GF_Pattern/wayback.txt ~/recon/$DOM/GF_Pattern/gau.txt | sort -u >> ~/recon/$DOM/GF_Pattern/sorted.txt
+echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
+echo " "
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 
 #GFPattern
 if [ -f ~/go/bin/gf ]
 then
  echo "${magenta} [+] Running GF_Pattern ${reset}"
- cat  ~/recon/$DOM/GF_Pattern/url.txt | gf cors  >> ~/recon/$DOM/GF_Pattern/cors.txt
- cat  ~/recon/$DOM/GF_Pattern/url.txt | gf aws-keys  >> ~/recon/$DOM/GF_Pattern/aws-keys.txt
- cat  ~/recon/$DOM/GF_Pattern/url.txt | gf base64  >> ~/recon/$DOM/GF_Pattern/base64.txt
- cat  ~/recon/$DOM/GF_Pattern/url.txt | gf s3-buckets >> ~/recon/$DOM/GF_Pattern/s3-buckets.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf cors  >> ~/recon/$DOM/GF_Pattern/cors.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf aws-keys  >> ~/recon/$DOM/GF_Pattern/aws-keys.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf base64  >> ~/recon/$DOM/GF_Pattern/base64.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf s3-buckets >> ~/recon/$DOM/GF_Pattern/s3-buckets.txt
 else
  echo "${blue} [+] Installing GF_Pattern ${reset}"
  go get -u github.com/tomnomnom/gf
  #git clone https://github.com/1ndianl33t/Gf-Patterns
  mkdir ~/.gf
- sudo cp  ~/go/src/github.com/tomnomnom/gf/examples/*.json ~/.gf
+ sudo cp ~/go/src/github.com/tomnomnom/gf/examples/*.json ~/.gf
  echo "${blue} [+] Started GF_Pattern ${reset}"
- cat  ~/recon/$DOM/GFPattern/url.txt | gf cors  >> ~/recon/$DOM/GF_Pattern/cors.txt
- cat  ~/recon/$DOM/GFPattern/url.txt | gf aws-keys  >> ~/recon/$DOM/GF_Pattern/aws-keys.txt
- cat  ~/recon/$DOM/GF_Pattern/url.txt | gf base64  >> ~/recon/$DOM/GF_Pattern/base64.txt
- cat  ~/recon/$DOM/GF_Pattern/url.txt | gf s3-buckets >> ~/recon/$DOM/GF_Pattern/s3-buckets.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf cors  >> ~/recon/$DOM/GF_Pattern/cors.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf aws-keys  >> ~/recon/$DOM/GF_Pattern/aws-keys.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf base64  >> ~/recon/$DOM/GF_Pattern/base64.txt
+ cat  ~/recon/$DOM/GF_Pattern/sorted.txt | gf s3-buckets >> ~/recon/$DOM/GF_Pattern/s3-buckets.txt
 fi
 echo " "
 echo "${blue} [+] Succesfully Finished GF_Pattern ${reset}"
 echo " "
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo ""
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
