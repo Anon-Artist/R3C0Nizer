@@ -10,28 +10,25 @@ reset=`tput sgr0`
 
 read -p "Enter domain name : " DOM
 
-if [ -d ~/recon/ ]
+if [ -d ~/reconizer/ ]
 then
   echo " "
 else
-  mkdir ~/recon
-
+  mkdir ~/reconizer
 fi
 
-if [ -d ~/recon/$DOM ]
+if [ -d ~/reconizer/tools ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM
-
+  mkdir ~/reconizer/tools 
 fi
 
-if [ -d ~/recon/$DOM/nuclei ]
+if [ -d ~/reconizer/$DOM/nuclei ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM/nuclei
-
+  mkdir ~/reconizer/$DOM/nuclei
 fi
 
 
@@ -53,15 +50,19 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 if [ -f ~/go/bin/nuclei ]
 then
- echo "${magenta} [+] Running nuclei ${reset}"
- nuclei -update-templates
- nuclei -l ~/recon/$DOM/unique.txt -t cves/ -t files/ -o ~/recon/$DOM/nuclei/nuclei_results.txt
+  echo "${magenta} [+] Running nuclei ${reset}"
+  nuclei -update-templates
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/cves/ -o ~/recon/$DOM/nuclei/cves_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/files/ -o ~/recon/$DOM/nuclei/files_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/vulnerabilities/ -o ~/recon/$DOM/nuclei/vulnerabilities_results.txt
 else
   echo "${blue} [+] Installing nuclei ${reset}"
   echo "${magenta} [+] Running nuclei ${reset}"
   go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
   nuclei -update-templates
-  nuclei -l ~/recon/$DOM/unique.txt -t cves/ -t files/ -o ~/recon/$DOM/nuclei/nuclei_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/cves/ -o ~/recon/$DOM/nuclei/cves_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/files/ -o ~/recon/$DOM/nuclei/files_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/vulnerabilities/ -o ~/recon/$DOM/nuclei/vulnerabilities_results.txt
 fi
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
