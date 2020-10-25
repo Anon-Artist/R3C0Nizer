@@ -26,6 +26,8 @@
   - sublist3r
 - Sorting Live Subdomains
   - httpx
+- Port Scanning
+  - rustscan
 - Content Discovery
   - feroxbuster
 - Visual Recon
@@ -46,7 +48,6 @@
 R3C0Nizer is now a baby script, which need some modification and contributions for improving the script such as 
 
  - Adding more assets
- - Resolving and Port scanning
  - Archive based scans
  - Data storage Buckets based scans
  - Github based scans
@@ -69,6 +70,7 @@ This script makes use of tools developed by the following people
 - https://github.com/projectdiscovery
 - https://github.com/michenriksen
 - https://github.com/devanshbatham
+- https://github.com/RustScan/RustScan
 
 # Contributors ⭐
  
