@@ -20,7 +20,8 @@ ${reset}\n"
 	echo -e "\t2. Sorting alive subdomains and Visual Recon"
 	echo -e "\t3. Content Discovery"
 	echo -e "\t4. Parameter Mining"
-	echo -e "\t5. Nuclei"
+	echo -e "\t5. GFPattern"
+	echo -e "\t6. Nuclei"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -49,7 +50,10 @@ function contentdisc {
         clear
         bash src/contentdiscovery.sh 
 }
-
+function GFPattern {
+	clear
+	bash src/GF_Patterns.sh
+}
 while [ 1 ]
 do
 	menu
@@ -69,6 +73,9 @@ do
 	paramining ;;
 	
 	5)
+	GFPattern ;;
+	
+	6)
 	nucleicall ;;
 
 	*)
