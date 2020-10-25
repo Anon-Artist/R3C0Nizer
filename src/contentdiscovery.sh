@@ -24,14 +24,6 @@ else
   mkdir ~/reconizer/tools 
 fi
 
-if [ -d ~/reconizer/$DOM ]
-then
-  echo " "
-else
-  mkdir ~/reconizer/$DOM
- 
-fi
- 
 if [ -d ~/reconizer/$DOM/Content_Discovery ]
 then
   echo " "
