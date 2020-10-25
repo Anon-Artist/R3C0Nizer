@@ -10,28 +10,32 @@ reset=`tput sgr0`
  
 read -p "Enter domain name : " DOM
  
-if [ -d ~/recon/ ]
+if [ -d ~/reconizer/ ]
 then
   echo " "
 else
-  mkdir ~/recon
- 
+  mkdir ~/reconizer 
 fi
  
-if [ -d ~/recon/$DOM ]
+if [ -d ~/reconizer/tools ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM
- 
+  mkdir ~/reconizer/tools 
+fi
+
+if [ -d ~/reconizer/$DOM ]
+then
+  echo " "
+else
+  mkdir ~/reconizer/$DOM
 fi
  
-if [ -d ~/recon/$DOM/Port_Scan ]
+if [ -d ~/reconizer/$DOM/Port_Scan ]
 then
   echo " "
 else
-  mkdir ~/recon/$DOM/Port_Scan
- 
+  mkdir ~/reconizer/$DOM/Port_Scan
 fi
  
  
@@ -52,8 +56,8 @@ echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${magenta} [+] Running Rust Scan ${reset}"
-for url in $(cat ~/recon/$DOM/unique.txt);do
-sudo docker run -it --rm --name rustscan rustscan/rustscan:1.10.0 $url -b 4000 -u 5000 --ports  2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,7447,7080,8880,8983,5673,7443,19000,19080,9200  | tee ~/recon/$DOM/Port_Scan/$url.txt
+for url in $(cat ~/reconizer/$DOM/unique.txt);do
+sudo docker run -it --rm --name rustscan rustscan/rustscan:1.10.0 $url -b 4000 -u 5000 --ports  2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,7447,7080,8880,8983,5673,7443,19000,19080,9200  | tee ~/reconizer/$DOM/Port_Scan/$url.txt
 done
 sed -i -n '/Starting Nmap/,$p' *.txt
 echo " "
