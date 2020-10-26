@@ -17,12 +17,13 @@ reset=`tput sgr0`
  ================== Anon-Artist ==================
 ${reset}\n"
 	echo -e "\t1. Subdomain enumeration"
-	echo -e "\t2. Port Scanning"
-	echo -e "\t3. Visual Recon"
-	echo -e "\t4. Content Discovery"
-	echo -e "\t5. Parameter Mining"
-	echo -e "\t6. GFPattern"
-	echo -e "\t7. Nuclei"
+	echo -e "\t2. Subdomain Takeover Scanning"
+	echo -e "\t3. Port Scanning"
+	echo -e "\t4. Visual Recon"
+	echo -e "\t5. Content Discovery"
+	echo -e "\t6. Parameter Mining"
+	echo -e "\t7. GFPattern"
+	echo -e "\t8. Nuclei"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -62,6 +63,10 @@ function portscanning {
 	clear
 	bash src/portscan.sh
 }
+function takeover_check {
+	clear
+	bash src/takeover.sh
+}
 
 while [ 1 ]
 do
@@ -71,23 +76,26 @@ do
 	break ;;
 	1)
 	subenum ;;
-
+	
 	2)
-	portscanning ;;
+	takeover_check ;;
 
 	3)
+	portscanning ;;
+
+	4)
 	visualrecon ;;
 	
-	4)
+	5)
 	contentdisc;;
 
-	5)
+	6)
 	paramining ;;
 	
-	6)
+	7)
 	GFPattern ;;
 	
-	7)
+	8)
 	nucleicall ;;
 
 	*)
