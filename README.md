@@ -26,6 +26,8 @@
   - sublist3r
 - Sorting Live Subdomains
   - httpx
+- Subdomain Takeover
+  - nuclei
 - Port Scanning
   - rustscan
 - Content Discovery
@@ -53,7 +55,6 @@ R3C0Nizer is now a baby script, which need some modification and contributions f
  - Data storage Buckets based scans
  - Github based scans
  - JS based scans
- - Subdomain takeover
  - Attack Vector based scans
 
 etc.. with the help of latest updated, fastest and efficient tools. 
