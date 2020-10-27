@@ -22,9 +22,11 @@ go_install(){
 	echo -e "${RED}[+] Downloading latest Go...${RESET}"
 	url="$(wget -qO- https://golang.org/dl/ | grep -oP 'https:\/\/dl\.google\.com\/go\/go([0-9\.]+)\.linux-amd64\.tar\.gz' | head -n 1 )"
 	wget --quiet --continue --show-progress "${url}"
-	unset url  
+	unset url
+	echo "export PATH=$PATH:~/go/bin" | sudo tee ~/.bashrc
     else   
         echo -e "${RED}[+] GO is already installed...${RESET}"
+	echo "export PATH=$PATH:~/go/bin" | sudo tee ~/.bashrc
     fi
 }
 
@@ -63,7 +65,7 @@ docker_install(){
 	sudo chmod +x /src/docker_install.sh       
 	bash /src/docker_install.sh
     else   
-        echo -e "${RED}[+] Docker is already installed...${RESET}"
+	echo -e "${RED}[+] Docker is already installed...${RESET}"
     fi
 }
 
