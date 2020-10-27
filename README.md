@@ -34,8 +34,13 @@
   - feroxbuster
 - Visual Recon
   - aquatone
-- Others
+- Archive based scans
+  - waybackurls
+  - gau
+  - gf (For pattern matching)
+- Fuzzing
   - paramspider
+- CVE, Vulnerability and Critical file disclosure based scans
   - nuclei
 - Wordlists
   - common.txt by dirb
@@ -51,7 +56,6 @@
 R3C0Nizer is now a baby script, which need some modification and contributions for improving the script such as 
 
  - Adding more assets
- - Archive based scans
  - Data storage Buckets based scans
  - Github based scans
  - JS based scans
@@ -73,6 +77,7 @@ This script makes use of tools developed by the following people
 - https://github.com/michenriksen
 - https://github.com/devanshbatham
 - https://github.com/RustScan/RustScan
+- https://github.com/lc/gau
 
 # Contributors ⭐
  
