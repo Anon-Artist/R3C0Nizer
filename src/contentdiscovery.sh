@@ -54,7 +54,7 @@ then
  echo "${magenta} [+] Running Feroxbuster ${reset}"
  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
- feroxbuster --url $url -w ~/reconizer/tools/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --threads 300 --output ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt
+ feroxbuster --url $url -w ~/reconizer/tools/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --depth 3 --threads 300 --output ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt
 done
 else
  echo "${blue} [+] Installing Feroxbuster ${reset}"
@@ -65,7 +65,7 @@ else
  echo "${magenta} [+] Running Feroxbuster ${reset}"
  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
- feroxbuster --url $url -w ~/reconizer/tools/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --threads 300 --output ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt
+ feroxbuster --url $url -w ~/reconizer/tools/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --depth 3 --threads 300 --output ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${blue} [+] Succesfully saved as content_discovery_result.txt ${reset}"
