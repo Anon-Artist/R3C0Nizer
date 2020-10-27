@@ -24,6 +24,7 @@ ${reset}\n"
 	echo -e "\t6. Parameter Mining"
 	echo -e "\t7. GFPattern"
 	echo -e "\t8. Nuclei"
+	echo -e "\t9. Whatweb"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -67,7 +68,10 @@ function takeover_check {
 	clear
 	bash src/takeover.sh
 }
-
+function whatweb {
+	clear
+	bash src/whatweb.sh
+}
 while [ 1 ]
 do
 	menu
@@ -98,6 +102,9 @@ do
 	8)
 	nucleicall ;;
 
+	9)
+	whatweb ;;
+	
 	*)
 	clear
 	echo "Wrong selection";;
