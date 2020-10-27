@@ -58,8 +58,10 @@ chmod +x prerequisites.sh reconizer.sh
 # Prerequisites
 
 - GO
-- Python3
+- Python and Python3
 - Docker
+- Chromium-browser
+- Dependencies
 
 # Expecting Contributions
 
