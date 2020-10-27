@@ -12,6 +12,8 @@
 ```
 git clone https://github.com/Anon-Artist/R3C0Nizer
 
+cd R3C0Nizer
+
 chmod +x prerequisites.sh reconizer.sh
 
 ./prerequisites.sh  #Run this script once this will check all dependencies are installed or not.
