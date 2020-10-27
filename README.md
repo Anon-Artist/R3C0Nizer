@@ -7,8 +7,7 @@
                                                   
 ```
 
-# Usage
-
+# Usage :clinking_glasses:
 ```
 git clone https://github.com/Anon-Artist/R3C0Nizer
 
@@ -17,16 +16,15 @@ cd R3C0Nizer
 chmod +x prerequisites.sh reconizer.sh
 
 ./prerequisites.sh  # Run this script once this will check all dependencies are installed or not.
-                    # If not installed it will install all the prerequisites mentioned in the readme automatically.
+                    # If not installed it will install all the prerequisites mentioned automatically.
                             
 ./reconizer.sh      # This is the recon script which will install necessary tools in its first run if it is not installed.
 ```
 
-# About
-
+# About :superhero_man:
 * R3C0Nizer is a script written in Bash, which was a subdomain enumeration tool, now is a growing first ever CLI based Menu driven automated scanner with latest updated, fastest and efficient tools.
 
-# Tools
+# Tools :muscle:
 
 - Subdomain Enumeration
   - assetfinder
@@ -55,15 +53,16 @@ chmod +x prerequisites.sh reconizer.sh
 - Wordlists
   - common.txt by dirb
 
-# Prerequisites
+# Prerequisites :hand_over_mouth:
 
+Basically every prerequisites are installed when run the prerequisites.sh script
 - GO
 - Python and Python3
 - Docker
 - Chromium-browser
 - Dependencies
 
-# Expecting Contributions
+# Expecting Contributions :monocle_face:
 
 R3C0Nizer need some contributions for improving the script such as 
  
@@ -76,7 +75,7 @@ R3C0Nizer need some contributions for improving the script such as
 
 etc.. with the help of latest updated, fastest and efficient tools.
       
-# Authors and Thanks
+# Authors and Thanks :sunglasses:
 
 This script makes use of tools developed by the following people
 - https://github.com/tomnomnom
@@ -92,7 +91,7 @@ This script makes use of tools developed by the following people
 - https://github.com/RustScan/RustScan
 - https://github.com/lc/gau
 
-# Contributors ⭐
+# Contributors :star_struck:
  
 * Details of Contributors:
 
