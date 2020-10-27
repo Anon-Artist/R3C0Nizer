@@ -52,17 +52,17 @@ if [ -f ~/go/bin/nuclei ]
 then
   echo "${magenta} [+] Running nuclei ${reset}"
   nuclei -update-templates
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/cves/ -o ~/recon/$DOM/nuclei/cves_results.txt
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/files/ -o ~/recon/$DOM/nuclei/files_results.txt
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/vulnerabilities/ -o ~/recon/$DOM/nuclei/vulnerabilities_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/cves/ -o ~/reconizer/$DOM/nuclei/cves_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/files/ -o ~/reconizer/$DOM/nuclei/files_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/vulnerabilities/ -o ~/reconizer/$DOM/nuclei/vulnerabilities_results.txt
 else
   echo "${blue} [+] Installing nuclei ${reset}"
   echo "${magenta} [+] Running nuclei ${reset}"
   go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
   nuclei -update-templates
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/cves/ -o ~/recon/$DOM/nuclei/cves_results.txt
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/files/ -o ~/recon/$DOM/nuclei/files_results.txt
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/vulnerabilities/ -o ~/recon/$DOM/nuclei/vulnerabilities_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/cves/ -o ~/reconizer/$DOM/nuclei/cves_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/files/ -o ~/reconizer/$DOM/nuclei/files_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/vulnerabilities/ -o ~/reconizer/$DOM/nuclei/vulnerabilities_results.txt
 fi
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
