@@ -61,12 +61,12 @@ mkdir ~/reconizer/$DOM/Visual_Recon
 if [ -f ~/go/bin/aquatone ]
 then
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | aquatone -out ~/reconizer/$DOM/Visual_Recon
+  cat ~/reconizer/$DOM/Subdomains/unique.txt | aquatone -http-timeout 10000 -scan-timeout 300 -ports xlarge -out ~/reconizer/$DOM/Visual_Recon
 else
   echo "${blue} [+] Installing Aquatone ${reset}"
   go get github.com/michenriksen/aquatone
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
-  cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | aquatone -out ~/reconizer/$DOM/Visual_Recon
+  cat ~/reconizer/$DOM/Subdomains/unique.txt | aquatone -http-timeout 10000 -scan-timeout 300 -ports xlarge -out ~/reconizer/$DOM/Visual_Recon
 fi
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
