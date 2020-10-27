@@ -9,11 +9,13 @@
 
 # Usage
 
-- `git clone https://github.com/Anon-Artist/R3C0Nizer`
-- `chmod +x prerequisites.sh reconizer.sh`
-- `./prerequisites.sh          [+] Run this script once this will check all dependencies are installed or not.`
-`                            [+] If not installed it will install all the prerequisites mentioned in the readme automatically.` 
-- `./reconizer.sh              [+] This is the recon script which will install necessary tools in its first run if it is not installed.`
+```
+git clone https://github.com/Anon-Artist/R3C0Nizer
+chmod +x prerequisites.sh reconizer.sh
+./prerequisites.sh          [+] Run this script once this will check all dependencies are installed or not.
+                            [+] If not installed it will install all the prerequisites mentioned in the readme automatically.
+./reconizer.sh              [+] This is the recon script which will install necessary tools in its first run if it is not installed.
+```
 
 # About
 
