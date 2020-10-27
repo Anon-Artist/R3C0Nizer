@@ -9,12 +9,18 @@
 
 # Usage
 
-`./reconizer.sh`
+`git clone https://github.com/Anon-Artist/R3C0Nizer
+
+chmod +x prerequisites.sh reconizer.sh
+
+./prerequisites.sh          [+] Run this script once this will check all dependencies are installed or not
+                            [+] If not installed it will install all the prerequisites mentioned in the readme automatically 
+
+./reconizer.sh              [+] This is the recon script which will install necessary tools in its first run if it is not installed.`
 
 # About
 
-* R3C0Nizer is a script written in Bash, Which was a subdomain enumeration tool, Now is a growing first ever CLI based Menu driven Automated scanner with latest updated, fastest and efficient tools.
-  and this script also install every tools mentioned below automatically in its first run.
+* R3C0Nizer is a script written in Bash, which was a subdomain enumeration tool, now is a growing first ever CLI based Menu driven automated scanner with latest updated, fastest and efficient tools.
 
 # Tools
 
