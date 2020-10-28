@@ -45,10 +45,19 @@ echo "${red}
 ${reset}"
 echo "${blue} [+] Started Content Discovery Scanning ${reset}"
 echo " "
- 
-#nuclei
+
+#wordlist
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
+if [ -f ~/reconizer/tools/common.txt ]
+then
+ echo " "
+else
+ echo "${blue} [+] Downloading wordlists ${reset}"
+ wget https://raw.githubusercontent.com/v0re/dirb/master/wordlists/common.txt -P ~/reconizer/tools/
+fi
+
+#feroxbuster
 if [ -f /usr/bin/feroxbuster ]
 then
  echo "${magenta} [+] Running Feroxbuster ${reset}"
@@ -58,7 +67,6 @@ then
 done
 else
  echo "${blue} [+] Installing Feroxbuster ${reset}"
- wget https://raw.githubusercontent.com/v0re/dirb/master/wordlists/common.txt -P ~/reconizer/tools/
  wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip -P ~/reconizer/tools/feroxbuster
  unzip ~/reconizer/tools/feroxbuster/feroxbuster_amd64.deb.zip -d ~/reconizer/tools/feroxbuster 
  sudo apt install ~/reconizer/tools/feroxbuster/*.deb
