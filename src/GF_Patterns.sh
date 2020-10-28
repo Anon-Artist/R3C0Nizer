@@ -84,7 +84,7 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 echo "${blue} [+] fetching unique URL ${reset}"
 echo " "
-cat ~/reconizer/$DOM/GF_Pattern/wayback.txt ~/reconizer/$DOM/GF_Pattern/gau.txt | sort -u >> ~/reconizer/$DOM/GF_Pattern/sorted.txt
+cat ~/reconizer/$DOM/GF_Pattern/waybackurls.txt ~/reconizer/$DOM/GF_Pattern/gau.txt | sort -u >> ~/reconizer/$DOM/GF_Pattern/sorted.txt
 echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
