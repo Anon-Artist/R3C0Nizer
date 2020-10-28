@@ -23,10 +23,10 @@ go_install(){
 	url="$(wget -qO- https://golang.org/dl/ | grep -oP 'https:\/\/dl\.google\.com\/go\/go([0-9\.]+)\.linux-amd64\.tar\.gz' | head -n 1 )"
 	wget --quiet --continue --show-progress "${url}"
 	unset url
-	echo "export PATH=$PATH:~/go/bin" | sudo tee ~/.bashrc
+	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
     else   
         echo -e "${RED}[+] GO is already installed...${RESET}"
-	echo "export PATH=$PATH:~/go/bin" | sudo tee ~/.bashrc
+	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
     fi
 }
 
