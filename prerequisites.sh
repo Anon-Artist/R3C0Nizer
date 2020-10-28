@@ -24,9 +24,11 @@ go_install(){
 	wget --quiet --continue --show-progress "${url}"
 	unset url
 	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
+	source ~/.bashrc
     else   
         echo -e "${RED}[+] GO is already installed...${RESET}"
 	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
+	source ~/.bashrc
     fi
 }
 
