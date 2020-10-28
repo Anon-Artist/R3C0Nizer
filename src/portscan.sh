@@ -52,7 +52,7 @@ ${reset}"
 echo "${blue} [+] Started Port Scanning ${reset}"
 echo " "
  
-#nuclei
+#rust scan
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${magenta} [+] Running Rust Scan ${reset}"
