@@ -64,6 +64,7 @@ echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
+
 #Gau
 if [ -f ~/go/bin/gau ]
 then
