@@ -18,7 +18,7 @@ chmod +x prerequisites.sh reconizer.sh
 ./prerequisites.sh  # Run this script once this will check all dependencies are installed or not.
                     # If not installed it will install all the prerequisites mentioned automatically.
                             
-./reconizer.sh      # This is the recon script which will install necessary tools in its first run if it is not installed.
+./reconizer.sh      # This is the recon script which will install necessary tools in its first run if it is not already installed.
 ```
 
 # About :superhero_man:
