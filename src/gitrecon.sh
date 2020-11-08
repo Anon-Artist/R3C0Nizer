@@ -60,12 +60,12 @@ echo " "
 if [ -f ~/go/bin/git-hound ]
 then
   echo "${magenta} [+] Running Git-Hound ${reset}"
-  echo "$DOM" | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | tee -a git_results.txt
+  echo "$DOM" | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/unique.txt | tee -a git_results.txt
 else
   echo "${blue} [+] Installing Git-Hound ${reset}"
   go get github.com/tillson/git-hound
   echo "${magenta} [+] Running Git-Hound ${reset}"
-  echo "$DOM" | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | tee -a git_results.txt
+  echo "$DOM" | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/unique.txt | tee -a git_results.txt
 fi
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
