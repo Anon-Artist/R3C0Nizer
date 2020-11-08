@@ -55,35 +55,31 @@ echo " "
 #wayback_URL
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -f ~/go/bin/waybackurls ]
+if [ -f ~/go/bin/waybackurls && ~/reconizer/$DOM/Archivescan/waybackurls.txt ]
 then
- echo "${magenta} [+] Running Waybackurls ${reset}"
- cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
+ echo "${magenta} [+] Already done Waybackurls ${reset}"
 else
  echo "${blue} [+] Installing Waybackurls ${reset}"
  go get -u github.com/tomnomnom/waybackurls
- echo "${blue} [+] Started URL Fetching ${reset}"
+ echo "${blue} [+] Running Waybackurls ${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
+ echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
 fi
-echo " "
-echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
-echo " "
-echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 
 #Gau
-if [ -f ~/go/bin/gau ]
-then
- echo "${magenta} [+] Running Gau ${reset}"
- cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau  >> ~/reconizer/$DOM/Archivescan/gau.txt
-else
- echo "${blue} [+] Installing Gaus ${reset}"
- go get -u github.com/lc/gau
- echo "${blue} [+] Started URL Fetching ${reset}"
- cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/Archivescan/gau.txt
-fi
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${blue} [+] Succesfully saved as gau.txt ${reset}"
+if [ -f ~/go/bin/gau && ~/reconizer/$DOM/Archivescan/gau.txt ]
+then
+ echo "${magenta} [+] Already done Gau ${reset}"
+else
+ echo "${blue} [+] Installing Gau ${reset}"
+ go get -u github.com/lc/gau
+ echo "${blue} [+] Running Gau ${reset}"
+ cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/Archivescan/gau.txt
+ echo "${blue} [+] Succesfully saved as gau.txt ${reset}"
+fi
 echo " "
 
 #uniquesubdomains
@@ -91,10 +87,12 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 echo "${blue} [+] fetching unique URL ${reset}"
 echo " "
-cat ~/reconizer/$DOM/Archivescan/waybackurls.txt ~/reconizer/$DOM/Archivescan/gau.txt | sort -u >> ~/reconizer/$DOM/Archivescan/sorted.txt
-echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
-echo " "
-echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+if [ -f ~/reconizer/$DOM/Archivescan/sorted.txt ]
+then
+ echo " "
+else
+ cat ~/reconizer/$DOM/Archivescan/waybackurls.txt ~/reconizer/$DOM/Archivescan/gau.txt | sort -u >> ~/reconizer/$DOM/Archivescan/sorted.txt
+fi
 echo " "
 
 #GFPattern
