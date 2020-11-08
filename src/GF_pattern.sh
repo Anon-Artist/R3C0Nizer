@@ -108,7 +108,7 @@ fi
 echo " "
 
 #GFPattern
-if [ -f ~/go/bin/gf ]
+if [ -f ~/.gf/redirect.json ]
 then
  echo "${magenta} [+] Running GF_Pattern ${reset}"
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
