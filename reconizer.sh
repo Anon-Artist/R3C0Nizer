@@ -21,9 +21,10 @@ ${reset}\n"
 	echo -e "\t3. Port Scanning"
 	echo -e "\t4. Visual Recon"
 	echo -e "\t5. Content Discovery"
-	echo -e "\t6. Parameter Mining"
-	echo -e "\t7. GFPattern"
+	echo -e "\t6. Parameter Fuzzing"
+	echo -e "\t7. Archive based Scanning"
 	echo -e "\t8. Nuclei"
+	echo -e "\t9. Github Recon"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -54,9 +55,9 @@ function contentdisc {
         bash src/contentdiscovery.sh 
 }
 
-function GFPattern {
+function Archivescan {
 	clear
-	bash src/GF_Patterns.sh
+	bash src/archivescan.sh
 }
 
 function portscanning {
@@ -66,6 +67,11 @@ function portscanning {
 function takeover_check {
 	clear
 	bash src/takeover.sh
+}
+
+function githubrecon {
+	clear
+	bash src/gitrecon.sh
 }
 
 while [ 1 ]
@@ -93,10 +99,13 @@ do
 	paramining ;;
 	
 	7)
-	GFPattern ;;
+	Archivescan ;;
 	
 	8)
 	nucleicall ;;
+	
+	9)
+	githubrecon ;;
 
 	*)
 	clear
