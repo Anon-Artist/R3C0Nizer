@@ -55,12 +55,18 @@ echo " "
 #wayback_URL
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -f ~/go/bin/waybackurls && ~/reconizer/$DOM/Archivescan/waybackurls.txt ]
+if [ -f ~/go/bin/waybackurls ] 
 then
- echo "${magenta} [+] Already done Waybackurls ${reset}"
+ echo "${magenta} [+] Already installed Waybackurls ${reset}"
 else
  echo "${blue} [+] Installing Waybackurls ${reset}"
  go get -u github.com/tomnomnom/waybackurls
+fi
+echo " "
+if [ -f ~/reconizer/$DOM/Archivescan/waybackurls.txt]
+then
+ echo "${magenta} [+] Already done Waybackurls ${reset}"
+else
  echo "${blue} [+] Running Waybackurls ${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
  echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
@@ -70,12 +76,18 @@ echo " "
 #Gau
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -f ~/go/bin/gau && ~/reconizer/$DOM/Archivescan/gau.txt ]
+if [ -f ~/go/bin/gau ]
 then
- echo "${magenta} [+] Already done Gau ${reset}"
+ echo "${magenta} [+] Already installed Gau ${reset}"
 else
  echo "${blue} [+] Installing Gau ${reset}"
  go get -u github.com/lc/gau
+fi
+echo " "
+if [~/reconizer/$DOM/Archivescan/gau.txt ]
+then
+ echo "${magenta} [+] Already done Gau ${reset}"
+else
  echo "${blue} [+] Running Gau ${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/Archivescan/gau.txt
  echo "${blue} [+] Succesfully saved as gau.txt ${reset}"
