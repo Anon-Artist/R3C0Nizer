@@ -24,8 +24,9 @@ ${reset}\n"
 	echo -e "\t6. Parameter Fuzzing"
 	echo -e "\t7. Archive based Scanning"
 	echo -e "\t8. GF pattern based Scanning"
-	echo -e "\t9. Nuclei"
-	echo -e "\t10. Github Recon"
+	echo -e "\t9. Scanning for JS"
+	echo -e "\t10. Nuclei"
+	echo -e "\t11. Github Recon"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -80,6 +81,11 @@ function gfpattern {
 	bash src/GF_pattern.sh
 }
 
+function jsrecon {
+	clear
+	bash src/jsrecon.sh
+}
+
 while [ 1 ]
 do
 	menu
@@ -111,9 +117,12 @@ do
 	gfpattern ;;
 	
 	9)
-	nucleicall ;;
+	jsrecon ;;
 	
 	10)
+	nucleicall ;;
+	
+	11)
 	githubrecon ;;
 
 	*)
