@@ -27,6 +27,8 @@ ${reset}\n"
 	echo -e "\t9. Scanning for JS"
 	echo -e "\t10. Nuclei"
 	echo -e "\t11. Github Recon"
+	echo -e " "
+	echo -e "\t101. Full Scan || 101 Scan\n\n"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -86,6 +88,12 @@ function jsrecon {
 	bash src/jsrecon.sh
 }
 
+function fullscan {
+	clear
+        echo -e "101 Scan is not implemented yet"
+	echo -e "Hang tight it will be released soon"
+}
+
 while [ 1 ]
 do
 	menu
@@ -124,7 +132,10 @@ do
 	
 	11)
 	githubrecon ;;
-
+	
+	101)
+	fullscan ;;
+	
 	*)
 	clear
 	echo "Wrong selection";;
