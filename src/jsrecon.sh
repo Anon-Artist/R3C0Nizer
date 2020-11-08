@@ -135,10 +135,10 @@ echo " "
 echo "${blue} [+] Started Gathering Live JsFiles-links ${reset}"
 echo " "
 cat ~/reconizer/$DOM/Archivescan/sorted.txt | grep -iE "\.js$" | uniq | sort >> ~/reconizer/$DOM/JSscan/mixed_jsfile_links_from_archives.txt
-cat ~/reconizer/$DOM/JSscan/jsfile_links_from_archives.txt | httpx -silent >> ~/reconizer/$DOM/JSscan/jsfile_links_from_archives.txt
-cat ~/reconizer/$DOM/Archivescan/sorted.txt | httpx -silent | subjs | anew | tee -a ~/reconizer/$DOM/JSscan/jsfile_links_from_subjs.txt
+cat ~/reconizer/$DOM/JSscan/mixed_jsfile_links_from_archives.txt | httpx -silent >> ~/reconizer/$DOM/JSscan/jsfile_links_from_archives.txt
+cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | httpx -silent | subjs | anew | tee -a ~/reconizer/$DOM/JSscan/jsfile_links_from_subjs.txt
 rm -rf ~/reconizer/$DOM/JSscan/mixed_jsfile_links_from_archives.txt
-cat ~/reconizer/$DOM/JSscan/jsfile_links_from_archives.txt ~/reconizer/$DOM/JSscan/jsfile_links_from_subjs.txt | sort -u jsfile_links.txt
+cat ~/reconizer/$DOM/JSscan/jsfile_links_from_archives.txt ~/reconizer/$DOM/JSscan/jsfile_links_from_subjs.txt | sort -u jsfiles_result.txt
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
