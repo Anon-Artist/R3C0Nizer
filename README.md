@@ -27,40 +27,6 @@ chmod +x prerequisites.sh reconizer.sh
 # Workflow :muscle:
 ![workflow](Workflow.svg)
 
-# Tools :muscle:
-
-- Subdomain Enumeration
-  - assetfinder
-  - amass
-  - findomain
-  - subfinder
-  - sublist3r
-- Sorting Live Subdomains
-  - httpx
-- Subdomain Takeover
-  - nuclei
-- Port Scanning
-  - rustscan
-- Content Discovery
-  - feroxbuster
-- Visual Recon
-  - aquatone
-- Archive based scans
-  - waybackurls
-  - gau
-- GF Pattern matching scan
-  - gf 
-- Parameter Fuzzing
-  - paramspider
-- CVE, Vulnerability and Critical file disclosure based scans
-  - nuclei
-- Github Recon
-  - git-hound
-- JS Recon
-  - subjs
-- Wordlists
-  - common.txt by dirb
-
 # Prerequisites :hand_over_mouth:
 
 Basically every prerequisites are installed when we run the prerequisites.sh script
