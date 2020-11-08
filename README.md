@@ -60,12 +60,7 @@ chmod +x prerequisites.sh reconizer.sh
 
 # Prerequisites :hand_over_mouth:
 
-Basically every prerequisites are installed when run the prerequisites.sh script
-- GO
-- Python and Python3
-- Docker
-- Chromium-browser
-- Dependencies
+Basically every prerequisites are installed when we run the prerequisites.sh script
 
 # Expecting Contributions :monocle_face:
 
@@ -74,7 +69,6 @@ R3C0Nizer need some contributions for improving the script such as
  - Better alternative tools
  - Adding more assets
  - Data storage Buckets based scans
- - JS based scans
 
 etc.. with the help of latest updated, fastest and efficient tools.
       
