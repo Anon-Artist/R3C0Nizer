@@ -25,11 +25,11 @@ else
   mkdir ~/reconizer/tools 
 fi
 
-if [ -d ~/reconizer/$DOM/GF_Pattern ]
+if [ -d ~/reconizer/$DOM/Archivescan ]
 then
   echo " "
 else
-  mkdir ~/reconizer/$DOM/GF_Pattern
+  mkdir ~/reconizer/$DOM/Archivescan
 fi
 
 
@@ -52,12 +52,12 @@ echo " "
 if [ -f ~/go/bin/waybackurls ]
 then
  echo "${magenta} [+] Running Waybackurls ${reset}"
- cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/GF_Pattern/waybackurls.txt 
+ cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
 else
  echo "${blue} [+] Installing Waybackurls ${reset}"
  go get -u github.com/tomnomnom/waybackurls
  echo "${blue} [+] Started URL Fetching ${reset}"
- cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/GF_Pattern/waybackurls.txt 
+ cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
 fi
 echo " "
 echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
@@ -69,12 +69,12 @@ echo " "
 if [ -f ~/go/bin/gau ]
 then
  echo "${magenta} [+] Running Gau ${reset}"
- cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau  >> ~/reconizer/$DOM/GF_Pattern/gau.txt
+ cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau  >> ~/reconizer/$DOM/Archivescan/gau.txt
 else
  echo "${blue} [+] Installing Gaus ${reset}"
  go get -u github.com/lc/gau
  echo "${blue} [+] Started URL Fetching ${reset}"
- cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/GF_Pattern/gau.txt
+ cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/Archivescan/gau.txt
 fi
 echo " "
 echo "${blue} [+] Succesfully saved as gau.txt ${reset}"
@@ -85,7 +85,7 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 echo "${blue} [+] fetching unique URL ${reset}"
 echo " "
-cat ~/reconizer/$DOM/GF_Pattern/waybackurls.txt ~/reconizer/$DOM/GF_Pattern/gau.txt | sort -u >> ~/reconizer/$DOM/GF_Pattern/sorted.txt
+cat ~/reconizer/$DOM/Archivescan/waybackurls.txt ~/reconizer/$DOM/Archivescan/gau.txt | sort -u >> ~/reconizer/$DOM/Archivescan/sorted.txt
 echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
@@ -95,10 +95,10 @@ echo " "
 if [ -f ~/go/bin/gf ]
 then
  echo "${magenta} [+] Running GF_Pattern ${reset}"
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf s3-buckets >> ~/reconizer/$DOM/GF_Pattern/s3-buckets.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf s3-buckets >> ~/reconizer/$DOM/GF_Pattern/s3-buckets.txt
 else
  echo "${blue} [+] Installing GF_Pattern ${reset}"
  go get -u github.com/tomnomnom/gf
@@ -106,10 +106,10 @@ else
  mkdir ~/.gf
  sudo cp ~/go/src/github.com/tomnomnom/gf/examples/*.json ~/.gf
  echo "${blue} [+] Started GF_Pattern ${reset}"
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
- cat  ~/reconizer/$DOM/GF_Pattern/sorted.txt | gf s3-buckets >> ~/reconizer/$DOM/GF_Pattern/s3-buckets.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf s3-buckets >> ~/reconizer/$DOM/GF_Pattern/s3-buckets.txt
 fi
 echo " "
 echo "${blue} [+] Succesfully Finished GF_Pattern ${reset}"
