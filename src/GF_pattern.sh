@@ -130,9 +130,9 @@ then
 else
  echo "${blue} [+] Installing GF_Pattern ${reset}"
  go get -u github.com/tomnomnom/gf
- git clone https://github.com/1ndianl33t/Gf-Patterns
+ git clone https://github.com/1ndianl33t/Gf-Patterns ~/reconizer/tools/Gf-Patterns
  mkdir ~/.gf
- mv ~/Gf-Patterns/*.json ~/.gf
+ mv ~/reconizer/tools/Gf-Patterns/*.json ~/.gf
  cp ~/go/src/github.com/tomnomnom/gf/examples/*.json ~/.gf
  echo "${blue} [+] Started GF_Pattern ${reset}"
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors | tee -a ~/reconizer/$DOM/GF_Patterns/cors.txt
