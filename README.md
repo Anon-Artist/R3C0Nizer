@@ -53,6 +53,8 @@ chmod +x prerequisites.sh reconizer.sh
   - nuclei
 - Github Recon
   - git-hound
+- JS Recon
+  - subjs
 - Wordlists
   - common.txt by dirb
 
@@ -90,8 +92,8 @@ This script makes use of tools developed by the following people
 - https://github.com/michenriksen
 - https://github.com/devanshbatham
 - https://github.com/1ndianl33t
-- https://github.com/RustScan/RustScan
-- https://github.com/lc/gau
+- https://github.com/RustScan
+- https://github.com/lc
 
 # Contributors :star_struck:
  
