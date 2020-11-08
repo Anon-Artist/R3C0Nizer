@@ -23,8 +23,9 @@ ${reset}\n"
 	echo -e "\t5. Content Discovery"
 	echo -e "\t6. Parameter Fuzzing"
 	echo -e "\t7. Archive based Scanning"
-	echo -e "\t8. Nuclei"
-	echo -e "\t9. Github Recon"
+	echo -e "\t8. GF pattern based Scanning"
+	echo -e "\t9. Nuclei"
+	echo -e "\t10. Github Recon"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -74,6 +75,11 @@ function githubrecon {
 	bash src/gitrecon.sh
 }
 
+function gfpattern {
+	clear
+	bash src/GF_pattern.sh
+}
+
 while [ 1 ]
 do
 	menu
@@ -102,9 +108,12 @@ do
 	Archivescan ;;
 	
 	8)
-	nucleicall ;;
+	gfpattern ;;
 	
 	9)
+	nucleicall ;;
+	
+	10)
 	githubrecon ;;
 
 	*)
