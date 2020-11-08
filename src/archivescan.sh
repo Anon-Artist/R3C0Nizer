@@ -90,32 +90,6 @@ echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-
-#GFPattern
-if [ -f ~/go/bin/gf ]
-then
- echo "${magenta} [+] Running GF_Pattern ${reset}"
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf s3-buckets >> ~/reconizer/$DOM/GF_Pattern/s3-buckets.txt
-else
- echo "${blue} [+] Installing GF_Pattern ${reset}"
- go get -u github.com/tomnomnom/gf
- #git clone https://github.com/1ndianl33t/Gf-Patterns
- mkdir ~/.gf
- sudo cp ~/go/src/github.com/tomnomnom/gf/examples/*.json ~/.gf
- echo "${blue} [+] Started GF_Pattern ${reset}"
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
- cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf s3-buckets >> ~/reconizer/$DOM/GF_Pattern/s3-buckets.txt
-fi
-echo " "
-echo "${blue} [+] Succesfully Finished GF_Pattern ${reset}"
-echo " "
-echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
-echo " "
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
