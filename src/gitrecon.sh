@@ -65,7 +65,7 @@ else
   echo "${blue} [+] Installing Git-Hound ${reset}"
   go get github.com/tillson/git-hound
   echo "${magenta} [+] Running Git-Hound ${reset}"
-  echo $1 | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | tee -a git_results.txt
+  echo "$DOM" | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | tee -a git_results.txt
 fi
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
