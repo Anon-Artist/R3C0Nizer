@@ -24,6 +24,9 @@ chmod +x prerequisites.sh reconizer.sh
 # About :superhero_man:
 * R3C0Nizer is a script written in Bash, which was a subdomain enumeration tool, now is a growing first ever CLI based Menu driven automated scanner with latest updated, fastest and efficient tools.
 
+# Workflow :muscle:
+![workflow](Workflow.png)
+
 # Tools :muscle:
 
 - Subdomain Enumeration
