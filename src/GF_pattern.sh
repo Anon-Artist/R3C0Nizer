@@ -103,6 +103,18 @@ then
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf s3-buckets >> ~/reconizer/$DOM/GF_Pattern/s3-buckets.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf idor | tee -a ~/reconizer/$DOM/GF_Patterns/idor.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf lfi | tee -a ~/reconizer/$DOM/GF_Patterns/lfi.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf rce | tee -a ~/reconizer/$DOM/GF_Patterns/rce.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf redirect | tee -a ~/reconizer/$DOM/GF_Patterns/redirect.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf sqli | tee -a ~/reconizer/$DOM/GF_Patterns/sqli.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf ssrf | tee -a ~/reconizer/$DOM/GF_Patterns/ssrf.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf ssti | tee -a ~/reconizer/$DOM/GF_Patterns/ssti.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf interestingparams | tee -a ~/reconizer/$DOM/GF_Patterns/interesting_parameters.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf interestingsubs | tee -a ~/reconizer/$DOM/GF_Patterns/interesting_subs.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf xss | tee -a ~/reconizer/$DOM/GF_Patterns/xss.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf interestingEXT | tee -a ~/reconizer/$DOM/GF_Patterns/interesting_extensions.txt
+ cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf debug_logic | tee -a ~/reconizer/$DOM/GF_Patterns/debug_logic.txt
 else
  echo "${blue} [+] Installing GF_Pattern ${reset}"
  go get -u github.com/tomnomnom/gf
