@@ -111,8 +111,8 @@ then
     findomain-linux --target $DOM -u ~/reconizer/$DOM/Subdomains/findomain.txt
 else
   echo "${blue} [+] Installing Findomain ${reset}"
-  wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux -P ~/reconizer/tools/findomain/
-  chmod +x ~/reconizer/tools/findomain/findomain-linux
+  wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux -P ~/go/bin/
+  chmod +x ~/go/bin/findomain-linux
   echo "${magenta} [+] Running Findomain ${reset}"
   findomain-linux --target $DOM -u ~/reconizer/$DOM/Subdomains/findomain.txt
 fi
@@ -142,7 +142,7 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 echo "${red} [+] Fetching unique domains ${reset}"
 echo " "
-cat ~/reconizer/$DOM/Subdomains/assetfinder.txt ~/reconizer/$DOM/Subdomains/amass.txt ~/reconizer/$DOM/Subdomains/subfinder.txt ~/reconizer/$DOM/Subdomains/findomain.txt ~/reconizer/$DOM/Subdomains/sublist3r.txt | sort -u >> ~/reconizer/$DOM/Subdomains/unique.txt
+cat ~/reconizer/$DOM/Subdomains/*.txt | sort -u >> ~/reconizer/$DOM/Subdomains/unique.txt
 echo "${blue} [+] Succesfully saved as unique.txt ${reset}"
 echo " "
 
