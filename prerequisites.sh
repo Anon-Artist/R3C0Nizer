@@ -17,42 +17,38 @@ RESET=`tput sgr0`
  ================== Anon-Artist ==================
 ${RESET}\n"
 
-go_install(){
-    if [ ! -x "$(command -v go)" ]; then
-	echo -e "${RED}[+] Downloading latest Go...${RESET}"
-	url="$(wget -qO- https://golang.org/dl/ | grep -oP 'https:\/\/dl\.google\.com\/go\/go([0-9\.]+)\.linux-amd64\.tar\.gz' | head -n 1 )"
-	wget --quiet --continue --show-progress "${url}"
-	unset url
-	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
-	source ~/.bashrc
-    else   
-        echo -e "${RED}[+] GO is already installed...${RESET}"
-	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
-	source ~/.bashrc
-    fi
-}
-
 python_install(){
     if [ ! -x "$(command -v python)" ]; then
         sudo apt-get install -y python
+	echo -e "${RED}[+] Python is Installed...${RESET}"
     else   
-        echo -e "${RED}[+] Python is already installed...${RESET}"
+        echo -e "${RED}[+] Python is installed...${RESET}"
     fi
 }
 
 python3_install(){
     if [ ! -x "$(command -v python3)" ]; then
         sudo apt-get install -y python3
+	echo -e "${RED}[+] Python3 is Installed...${RESET}"
     else   
-        echo -e "${RED}[+] Python3 is already installed...${RESET}"
+        echo -e "${RED}[+] Python3 is installed...${RESET}"
     fi
+}
+
+go_install(){
+	echo -e "${RED}[+] GO is updating...${RESET}"
+	sudo apt-get install -y golang -qq > /dev/null
+	echo -e "${RED}[+] GO is Installed...${RESET}"
+	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
+	source ~/.bashrc
 }
 
 chromium_install(){
     if [ ! -x "$(command -v chromium)" ]; then
         sudo apt install -y chromium
+	echo -e "${RED}[+] Chromium is Installed...${RESET}"
     else
-        echo -e "${RED}[+] Chromium is already installed...${RESET}"
+        echo -e "${RED}[+] Chromium is installed...${RESET}"
     fi
 }
 
@@ -60,8 +56,9 @@ docker_install(){
     if [ ! -x "$(command -v docker)" ]; then
 	sudo chmod +x /src/docker_install.sh       
 	bash /src/docker_install.sh
+	echo -e "${RED}[+] Docker is Installed...${RESET}"
     else   
-	echo -e "${RED}[+] Docker is already installed...${RESET}"
+	echo -e "${RED}[+] Docker is installed...${RESET}"
     fi
 }
 
@@ -70,12 +67,12 @@ dependencies_install(){
     for i in $dependencies; do
         sudo apt-get install -y $i -qq > /dev/null
     done
-    echo -e "${RED}[+] Other Dependencies are already installed...${RESET}"
+    echo -e "${RED}[+] Other Dependencies are installed...${RESET}"
 }
 
-go_install
 python_install
 python3_install
+go_install
 chromium_install
 docker_install
 dependencies_install
