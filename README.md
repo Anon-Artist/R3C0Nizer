@@ -22,20 +22,21 @@ chmod +x prerequisites.sh reconizer.sh
 ```
 
 # About :superhero_man:
-* R3C0Nizer is a script written in Bash, which was a subdomain enumeration tool, now is a growing first ever CLI based Menu driven automated scanner with latest updated, fastest and efficient tools.
+* R3C0Nizer is a tool written in Bash, which was a subdomain enumeration tool, now is the first ever CLI based menu-driven automated web application recon tool  which gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools.
 
 # Workflow :muscle:
 ![workflow](Workflow.svg)
 
 # Prerequisites :hand_over_mouth:
 
-Basically every prerequisites are installed when we run the prerequisites.sh script
+* Basically every prerequisites are installed when we run the prerequisites.sh script
+* Setup git-hound config before running Github Recon or 101 Scan (Create a ~/.githound/config.yml with your GitHub username and password.) Check documentation of git-hound.
+* Optional : Add API keys in config of subfinder and findomain for tweaking perfomance.  
 
 # Expecting Contributions :monocle_face:
 
 R3C0Nizer need some contributions for improving the script such as 
- 
- - Better alternative tools
+
  - Adding more assets
  - Data storage Buckets based scans
 
