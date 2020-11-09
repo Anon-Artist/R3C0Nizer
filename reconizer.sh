@@ -16,19 +16,19 @@ reset=`tput sgr0`
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}\n"
-	echo -e "\t1. Subdomain enumeration"
-	echo -e "\t2. Subdomain Takeover Scanning"
-	echo -e "\t3. Port Scanning"
-	echo -e "\t4. Visual Recon"
-	echo -e "\t5. Content Discovery"
-	echo -e "\t6. Parameter Fuzzing"
-	echo -e "\t7. Archive based Scanning"
-	echo -e "\t8. GF pattern based Scanning"
-	echo -e "\t9. Scanning for JS Files"
-	echo -e "\t10. Nuclei"
-	echo -e "\t11. Github Recon"
+	echo -e "\tA. Subdomain enumeration"
+	echo -e "\tB. Subdomain Takeover Scanning"
+	echo -e "\tC. Port Scanning"
+	echo -e "\tD. Visual Recon"
+	echo -e "\tE. Content Discovery"
+	echo -e "\tF. Parameter Fuzzing"
+	echo -e "\tG. Archive based Scanning"
+	echo -e "\tH. GF pattern based Scanning"
+	echo -e "\tI. Scanning for JS Files"
+	echo -e "\tJ. Nuclei"
+	echo -e "\tK. Github Recon"
 	echo -e " "
-	echo -e "\t101. Full Scan || 101 Scan\n\n"
+	echo -e "\t1. 101 Scan (FULL SCAN)\n\n"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -100,40 +100,40 @@ do
 	case $option in
 	0)
 	break ;;
-	1)
+	A)
 	subenum ;;
 	
-	2)
+	B)
 	takeover_check ;;
 
-	3)
+	C)
 	portscanning ;;
 
-	4)
+	D)
 	visualrecon ;;
 	
-	5)
+	E)
 	contentdisc;;
 
-	6)
+	F)
 	paramining ;;
 	
-	7)
+	G)
 	Archivescan ;;
 	
-	8)
+	H)
 	gfpattern ;;
 	
-	9)
+	I)
 	jsrecon ;;
 	
-	10)
+	J)
 	nucleicall ;;
 	
-	11)
+	K)
 	githubrecon ;;
 	
-	101)
+	1)
 	fullscan ;;
 	
 	*)
