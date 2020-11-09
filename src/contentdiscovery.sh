@@ -58,7 +58,7 @@ else
 fi
 
 #feroxbuster
-if [ -f /usr/bin/feroxbuster ]
+if [ -f ~/go/bin/feroxbuster ]
 then
  echo "${magenta} [+] Running Feroxbuster ${reset}"
  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
@@ -67,9 +67,9 @@ then
 done
 else
  echo "${blue} [+] Installing Feroxbuster ${reset}"
- wget https://github.com/epi052/feroxbuster/releases/latest/download/feroxbuster_amd64.deb.zip -P ~/reconizer/tools/feroxbuster
- unzip ~/reconizer/tools/feroxbuster/feroxbuster_amd64.deb.zip -d ~/reconizer/tools/feroxbuster 
- sudo apt install ~/reconizer/tools/feroxbuster/*.deb
+ wget https://github.com/epi052/feroxbuster/releases/download/v1.5.2/x86_64-linux-feroxbuster.zip -P ~/reconizer/tools/feroxbuster
+ unzip ~/reconizer/tools/feroxbuster/x86_64-linux-feroxbuster.zip -d ~/go/bin/
+ chmod 777 ~/go/bin/feroxbuster
  echo "${magenta} [+] Running Feroxbuster ${reset}"
  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
