@@ -105,7 +105,7 @@ echo " "
 #find-domain
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -f ~/reconizer/tools/findomain/findomain-linux ]
+if [ -f ~/go/bin/findomain-linux ]
 then
   echo "${magenta} [+] Running Findomain ${reset}"
     findomain-linux --target $DOM -u ~/reconizer/$DOM/Subdomains/findomain.txt
