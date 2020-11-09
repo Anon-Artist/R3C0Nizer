@@ -28,7 +28,7 @@ ${reset}\n"
 	echo -e "\tJ. Nuclei"
 	echo -e "\tK. Github Recon"
 	echo -e " "
-	echo -e "\t1. 101 Scan (FULL SCAN)\n\n"
+	echo -e "\t1. 101 Scan (FULL SCAN)\n"
 	echo -e "\t0. Exit Menu\n\n"
 	echo -en "\t\tEnter an Option: "
 	read -n 1 option
@@ -90,8 +90,10 @@ function jsrecon {
 
 function fullscan {
 	clear
+	echo -e "${red}=====================================${reset}\n"
         echo -e "101 Scan is not implemented yet"
-	echo -e "Hang tight it will be released soon"
+	echo -e "Hang tight it will be released soon\n"
+	echo -e "${red}=====================================${reset}"
 }
 
 while [ 1 ]
