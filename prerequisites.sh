@@ -91,7 +91,6 @@ dependencies_install(){
     echo -e "${RED}[+] All Dependencies are already installed...${RESET}"
 }
 
-update
 go_install
 python_install
 python3_install
