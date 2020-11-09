@@ -57,7 +57,6 @@ echo " "
 #screenshotting
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-mkdir ~/reconizer/$DOM/Visual_Recon
 if [ -f ~/go/bin/aquatone ]
 then
   echo "${magenta} [+] Screenshotting Alive subs ${reset}"
