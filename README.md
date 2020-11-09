@@ -1,10 +1,12 @@
 ```
- ____  _____  ____ ___  _   _ _              
-|  _ \|___ / / ___/ _ \| \ | (_)_______ _ __ 
-| |_) | |_ \| |  | | | |  \| | |_  / _ \ '__|
-|  _ < ___) | |__| |_| | |\  | |/ /  __/ |   
-|_| \_\____/ \____\___/|_| \_|_/___\___|_|   
-                                                  
+ =================================================
+|   ____  _____  ____ ___  _   _ _                |
+|  |  _ \|___ / / ___/ _ \| \ | (_)_______ _ __   |
+|  | |_) | |_ \| |  | | | |  \| | |_  / _ \ '__|  |
+|  |  _ < ___) | |__| |_| | |\  | |/ /  __/ |     |
+|  |_| \_\____/ \____\___/|_| \_|_/___\___|_|     |
+|                                                 |
+ ================= Anon-Artist ===================    
 ```
 
 # Usage :clinking_glasses:
@@ -25,7 +27,7 @@ chmod +x prerequisites.sh reconizer.sh
 * R3C0Nizer is a tool written in Bash, which was a subdomain enumeration tool, now is the first ever CLI based menu-driven automated web application recon tool  which gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools.
 
 # Workflow :muscle:
-![workflow](Workflow.svg)
+![workflow](workflow.svg)
 
 # Notes :writing_hand:
 
