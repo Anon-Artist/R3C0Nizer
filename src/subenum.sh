@@ -77,6 +77,7 @@ then
   amass enum --passive -d $DOM > ~/reconizer/$DOM/Subdomains/amass.txt
 else
   echo "${blue} [+] Installing Amass ${reset}"
+  echo "${blue} [+] This may take few minutes hang tight... ${reset}"
   go get -u github.com/OWASP/Amass/...
   echo "${magenta} [+] Running Amass ${reset}"
   amass enum --passive -d $DOM > ~/reconizer/$DOM/Subdomains/amass.txt
