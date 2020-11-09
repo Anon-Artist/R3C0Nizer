@@ -27,29 +27,31 @@ chmod +x prerequisites.sh reconizer.sh
 # Workflow :muscle:
 ![workflow](Workflow.svg)
 
-# Prerequisites :hand_over_mouth:
+# Notes :writing_hand:
 
-* Basically every prerequisites are installed when we run the prerequisites.sh script
-* Setup git-hound config before running Github Recon or 101 Scan (Create a ~/.githound/config.yml with your GitHub username and password.) Check documentation of git-hound.
-* Optional : Add API keys in config of subfinder and findomain for tweaking perfomance.  
+* Recommended : Update and upgrade your operating system.
+* Create git-hound config before running Github Recon or 101 Scan. Check documentation of git-hound https://github.com/tillson/git-hound#setup.
+* Optional : Add API keys in config of subfinder and findomain for tweaking perfomance.
+* Portscanner do not scan for port 80 and 443, so if the Ip only contains only these two ports then the result will not produce for the ip.
+* Recursive scan is implemented in feroxbuster with depth 3 on all live subdomains.
+
+# Demo :boom:
+![Demo](screen.png)
 
 # Expecting Contributions :monocle_face:
 
-R3C0Nizer need some contributions for improving the script such as 
+R3C0Nizer expecting contributions for improving the script such as 
 
  - Adding more assets
  - Data storage Buckets based scans
-
-etc.. with the help of latest updated, fastest and efficient tools.
       
 # Authors and Thanks :sunglasses:
 
-This script makes use of tools developed by the following people
+This script makes use of tools developed by the following people/team
 - https://github.com/tomnomnom
 - https://github.com/epi052
 - https://github.com/aboul3la
 - https://github.com/OWASP
-- https://github.com/GovindPalakkal
 - https://github.com/Findomain
 - https://github.com/v0re
 - https://github.com/projectdiscovery
@@ -58,6 +60,7 @@ This script makes use of tools developed by the following people
 - https://github.com/1ndianl33t
 - https://github.com/RustScan
 - https://github.com/lc
+- https://github.com/tillson
 
 # Contributors :star_struck:
  
