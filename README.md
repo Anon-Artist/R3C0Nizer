@@ -36,6 +36,8 @@ chmod +x prerequisites.sh reconizer.sh
 * Optional : Add API keys in config of subfinder and findomain for tweaking perfomance.
 * Portscanner do not scan for port 80 and 443, so if the Ip only contains only these two ports then the result will not produce for the ip.
 * Recursive scan is implemented in feroxbuster with depth 3 on all live subdomains.
+* Do not look for nmap and naabu rust scan do the best.
+* Used feroxbuster instead of ffuf,wfuzz because feroxbuster is more faster.
 
 # Demo :boom:
 ![Demo](screen.png)
