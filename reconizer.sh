@@ -90,10 +90,10 @@ function jsrecon {
 
 function fullscan {
 	clear
-	echo -e "${red}=====================================${reset}\n"
-        echo -e "101 Scan is not implemented yet"
-	echo -e "Hang tight it will be released soon\n"
-	echo -e "${red}=====================================${reset}"
+	echo -e "\n\t${red}=====================================${reset}\n"
+        echo -e "\t101 Scan is not implemented yet"
+	echo -e "\tHang tight it will be released soon\n"
+	echo -e "\t${red}=====================================${reset}"
 }
 
 while [ 1 ]
