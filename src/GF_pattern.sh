@@ -49,7 +49,7 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Started URL Fetching ${reset}"
+echo "${blue} [+] Started GF Pattern based scans ${reset}"
 echo " "
 
 #wayback_URL
@@ -67,7 +67,7 @@ if [ -f ~/reconizer/$DOM/Archivescan/waybackurls.txt]
 then
  echo "${magenta} [+] Already done Waybackurls ${reset}"
 else
- echo "${blue} [+] Running Waybackurls ${reset}"
+ echo "${blue} [+] Running Waybackurls for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
  echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
 fi
@@ -88,7 +88,7 @@ if [~/reconizer/$DOM/Archivescan/gau.txt ]
 then
  echo "${magenta} [+] Already done Gau ${reset}"
 else
- echo "${blue} [+] Running Gau ${reset}"
+ echo "${blue} [+] Running Gau for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/Archivescan/gau.txt
  echo "${blue} [+] Succesfully saved as gau.txt ${reset}"
 fi
@@ -97,20 +97,19 @@ echo " "
 #uniquesubdomains
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${blue} [+] fetching unique URL ${reset}"
-echo " "
 if [ -f ~/reconizer/$DOM/Archivescan/sorted.txt ]
 then
  echo " "
 else
  cat ~/reconizer/$DOM/Archivescan/waybackurls.txt ~/reconizer/$DOM/Archivescan/gau.txt | sort -u >> ~/reconizer/$DOM/Archivescan/sorted.txt
+ echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
+ echo " "
 fi
-echo " "
 
 #GFPattern
 if [ -f ~/.gf/redirect.json ]
 then
- echo "${magenta} [+] Running GF_Pattern ${reset}"
+ echo "${magenta} [+] Running GF for pattern based scanning${reset}"
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors  >> ~/reconizer/$DOM/GF_Pattern/cors.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf aws-keys  >> ~/reconizer/$DOM/GF_Pattern/aws-keys.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf base64  >> ~/reconizer/$DOM/GF_Pattern/base64.txt
@@ -128,13 +127,13 @@ then
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf interestingEXT | tee -a ~/reconizer/$DOM/GF_Patterns/interesting_extensions.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf debug_logic | tee -a ~/reconizer/$DOM/GF_Patterns/debug_logic.txt
 else
- echo "${blue} [+] Installing GF_Pattern ${reset}"
+ echo "${blue} [+] Installing GF_Patterns ${reset}"
  go get -u github.com/tomnomnom/gf
  git clone https://github.com/1ndianl33t/Gf-Patterns ~/reconizer/tools/Gf-Patterns
  mkdir ~/.gf
  mv ~/reconizer/tools/Gf-Patterns/*.json ~/.gf
  cp ~/go/src/github.com/tomnomnom/gf/examples/*.json ~/.gf
- echo "${blue} [+] Started GF_Pattern ${reset}"
+ echo "${blue} [+] Started GF for pattern based scanning${reset}"
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf cors | tee -a ~/reconizer/$DOM/GF_Patterns/cors.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf aws-keys | tee -a ~/reconizer/$DOM/GF_Patterns/aws-keys.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf base64 | tee -a ~/reconizer/$DOM/GF_Patterns/base64.txt
@@ -153,10 +152,10 @@ else
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf debug_logic | tee -a ~/reconizer/$DOM/GF_Patterns/debug_logic.txt
 fi
 echo " "
-echo "${blue} [+] Succesfully Finished GF_Pattern Scan ${reset}"
+echo "${blue} [+] Succesfully saved the results${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo "${red} [+] Thank you for using R3C0Nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
