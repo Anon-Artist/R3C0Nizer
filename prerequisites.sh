@@ -19,6 +19,7 @@ ${RESET}\n"
 
 python_install(){
     if [ ! -x "$(command -v python)" ]; then
+        echo -e "${RED}[+] Python is Installed...${RESET}"
         sudo apt-get install -y python
 	echo -e "${RED}[+] Python is Installed...${RESET}"
     else   
@@ -28,6 +29,7 @@ python_install(){
 
 python3_install(){
     if [ ! -x "$(command -v python3)" ]; then
+        echo -e "${RED}[+] Python3 is Installing...${RESET}"
         sudo apt-get install -y python3
 	echo -e "${RED}[+] Python3 is Installed...${RESET}"
     else   
@@ -36,7 +38,7 @@ python3_install(){
 }
 
 go_install(){
-	echo -e "${RED}[+] GO is updating...${RESET}"
+	echo -e "${RED}[+] GO is Installing...${RESET}"
 	sudo apt-get install -y golang -qq > /dev/null
 	echo -e "${RED}[+] GO is Installed...${RESET}"
 	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
@@ -45,6 +47,7 @@ go_install(){
 
 chromium_install(){
     if [ ! -x "$(command -v chromium)" ]; then
+        echo -e "${RED}[+] Chromium is Installing...${RESET}"
         sudo apt install -y chromium
 	echo -e "${RED}[+] Chromium is Installed...${RESET}"
     else
@@ -54,8 +57,8 @@ chromium_install(){
 
 docker_install(){
     if [ ! -x "$(command -v docker)" ]; then
-	sudo chmod +x src/docker_install.sh       
-	bash src/docker_install.sh
+	echo -e "${RED}[+] Docker is Installing...${RESET}"   
+	sudo apt-get install docker
 	echo -e "${RED}[+] Docker is Installed...${RESET}"
     else   
 	echo -e "${RED}[+] Docker is installed...${RESET}"
@@ -63,6 +66,7 @@ docker_install(){
 }
 
 dependencies_install(){
+    echo -e "${RED}[+] Other Dependencies are installing...${RESET}"
     dependecies="git gcc g++ make curl python-pip python3-pip libldns-dev libpcap-dev xsltproc apt-transport-https ca-certificates gnupg-agent software-properties-common"
     for i in $dependencies; do
         sudo apt-get install -y $i -qq > /dev/null
