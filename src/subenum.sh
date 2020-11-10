@@ -154,14 +154,16 @@ if [ -f ~/go/bin/httpx ]
 then
   echo "${magenta} [+] Running Httpx for sorting alive subdomains${reset}"
 cat ~/reconizer/$DOM/Subdomains/unique.txt | httpx >> ~/reconizer/$DOM/Subdomains/all-alive-subs.txt
+cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | sed 's/http\(.?*\)*:\/\///g' | sort -u > ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt
 else
   echo "${blue} [+] Installing Httpx ${reset}"
   go get -u github.com/projectdiscovery/httpx/cmd/httpx
   echo "${magenta} [+] Running Httpx for sorting alive subdomains${reset}"
   cat ~/reconizer/$DOM/Subdomains/unique.txt | httpx >> ~/reconizer/$DOM/Subdomains/all-alive-subs.txt
+  cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | sed 's/http\(.?*\)*:\/\///g' | sort -u > ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt
 fi
 echo " "
-echo "${blue} [+] Successfully saved as all-alive-subs.txt"
+echo "${blue} [+] Successfully saved the results"
 echo " "
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
