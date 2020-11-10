@@ -76,8 +76,7 @@ done
 
 #Removing IP behind Incapsula
 incapsula="199.83.128.0/21 198.143.32.0/19 149.126.72.0/21 103.28.248.0/22 45.64.64.0/22 185.11.124.0/22 192.230.64.0/18 107.154.0.0/16 45.60.0.0/16 45.223.0.0/16"
-for ip in $(cat ~/reconi
-zer/$DOM/Port_Scan/afterremovecloudflare.txt); do
+for ip in $(cat ~/reconizer/$DOM/Port_Scan/afterremovecloudflare.txt); do
 echo $ip | grepcidr "$incapsula" >/dev/null && echo "${red} [!] $ip is protected by Incapsula ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/afterremoveincapsula.txt
 done
 
