@@ -43,7 +43,7 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Started URL Fetching ${reset}"
+echo "${blue} [+] Started Scanning for JS files ${reset}"
 echo " "
 
 
@@ -139,6 +139,6 @@ echo "${blue} [+] Succesfully saved the results${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo "${red} [+] Thank you for using R3C0Nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
