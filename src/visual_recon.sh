@@ -17,13 +17,6 @@ else
   mkdir ~/reconizer
 fi
 
-if [ -d ~/reconizer/tools ]
-then
-  echo " "
-else
-  mkdir ~/reconizer/tools 
-fi
-
 if [ -d ~/reconizer/$DOM ]
 then
   echo " "
@@ -74,6 +67,6 @@ echo "${blue} [+] Successfully saved the results"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo ""
-echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo "${red} [+] Thank you for using R3C0Nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
