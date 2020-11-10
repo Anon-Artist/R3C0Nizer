@@ -52,12 +52,12 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 if [ -f ~/go/bin/aquatone ]
 then
-  echo "${magenta} [+] Screenshotting Alive subs ${reset}"
+  echo "${magenta} [+] Running Aquatone for screenshotting alive subdomains${reset}"
   cat ~/reconizer/$DOM/Subdomains/unique.txt | aquatone -http-timeout 10000 -scan-timeout 300 -ports xlarge -out ~/reconizer/$DOM/Visual_Recon
 else
   echo "${blue} [+] Installing Aquatone ${reset}"
   go get github.com/michenriksen/aquatone
-  echo "${magenta} [+] Screenshotting Alive subs ${reset}"
+  echo "${magenta} [+] Running Aquatone for screenshotting alive subdomains${reset}"
   cat ~/reconizer/$DOM/Subdomains/unique.txt | aquatone -http-timeout 10000 -scan-timeout 300 -ports xlarge -out ~/reconizer/$DOM/Visual_Recon
 fi
 
