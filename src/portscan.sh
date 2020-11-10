@@ -60,14 +60,20 @@ else
 fi
 
 #grepcidr
+echo " "
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
 if [ ! -x "$(command -v grepcidr)" ]; then
 	echo "${blue} [+] Installing grepcidr ${reset}"
 	sudo apt-get install grepcidr
+	echo " "
 else
-	echo ""
+	echo " "
 fi
 
 #Removing IP behind Cloudflare
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
 echo "${magenta} [+] Running grepcidr for removing hosts behind WAF${reset}"
 cloudflare="173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 162.158.0.0/15 104.16.0.0/12 172.64.0.0/13 131.0.72.0/22"
 for ip in $(cat ~/reconizer/$DOM/Port_Scan/resolved_ips.txt); do
@@ -96,11 +102,12 @@ done
 rm -rf ~/reconizer/$DOM/Port_Scan/afterremovecloudflare.txt ~/reconizer/$DOM/Port_Scan/afterremoveincapsula.txt ~/reconizer/$DOM/Port_Scan/afterremovesucuri.txt
 
 #rust scan
+echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${magenta} [+] Updating and running Rust Scan for scanning ports${reset}"
 for url in $(cat ~/reconizer/$DOM/Port_Scan/Final_IP_List.txt);do
-sudo docker run -it --rm --name rustscan cmnatic/rustscan:debian-buster rustscan $url -b 4000 -u 5000 --ports 81,161,300,591,593,832,981,1010,1311,2075,2076,2082,2087,2095,2096,2480,3000,3128,3306,3333,3366,3868,4000,4040,4044,4243,4567,4711,4712,4993,5000,5104,5108,5432,5673,5800,5900,6000,6443,6543,7000,7077,7080,7396,7443,7447,7474,8000,8001,8008,8014,8042,8069,8080,8081,8088,8089,8090,8091,8118,8181,8123,8172,8222,8243,8280,8281,8333,8443,8500,8834,8880,8888,8983,9000,9043,9060,9080,9090,9091,9200,9443,9800,9981,9999,10000,12443,15672,16080,18091,18092,19000,19080,20720,28017 | tee ~/reconizer/$DOM/Port_Scan/$url.txt
+sudo docker run -it --rm --name rustscan rustscan/rustscan:2.0.0 $url -b 4000 -u 5000 -p 81,161,300,591,593,832,981,1010,1311,2075,2076,2082,2087,2095,2096,2480,3000,3128,3306,3333,3366,3868,4000,4040,4044,4243,4567,4711,4712,4993,5000,5104,5108,5432,5673,5800,5900,6000,6443,6543,7000,7077,7080,7396,7443,7447,7474,8000,8001,8008,8014,8042,8069,8080,8081,8088,8089,8090,8091,8118,8181,8123,8172,8222,8243,8280,8281,8333,8443,8500,8834,8880,8888,8983,9000,9043,9060,9080,9090,9091,9200,9443,9800,9981,9999,10000,12443,15672,16080,18091,18092,19000,19080,20720,28017 | tee ~/reconizer/$DOM/Port_Scan/$url.txt
 done
 cd ~/reconizer/$DOM/Port_Scan/
 sed -i -n '/nmap.org/,$p' *.txt
