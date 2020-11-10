@@ -17,13 +17,6 @@ else
   mkdir ~/reconizer
 fi
 
-if [ -d ~/reconizer/tools ]
-then
-  echo " "
-else
-  mkdir ~/reconizer/tools 
-fi
-
 if [ -d ~/reconizer/$DOM ]
 then
   echo " "
@@ -59,12 +52,12 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 if [ -f ~/go/bin/git-hound ]
 then
-  echo "${magenta} [+] Running Git-Hound ${reset}"
+  echo "${magenta} [+] Running Git-Hound for github recon ${reset}"
   echo "$DOM" | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/unique.txt | tee -a git_results.txt
 else
   echo "${blue} [+] Installing Git-Hound ${reset}"
   go get github.com/tillson/git-hound
-  echo "${magenta} [+] Running Git-Hound ${reset}"
+  echo "${magenta} [+] Running Git-Hound for github recon ${reset}"
   echo "$DOM" | git-hound --subdomain-file ~/reconizer/$DOM/Subdomains/unique.txt | tee -a git_results.txt
 fi
 
