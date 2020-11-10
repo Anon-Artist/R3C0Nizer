@@ -43,7 +43,7 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Started URL Fetching ${reset}"
+echo "${blue} [+] Started Archive based Scanning ${reset}"
 echo " "
 
 #wayback_URL
@@ -51,12 +51,12 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 if [ -f ~/go/bin/waybackurls ]
 then
- echo "${magenta} [+] Running Waybackurls ${reset}"
+ echo "${magenta} [+] Running Waybackurls for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
 else
  echo "${blue} [+] Installing Waybackurls ${reset}"
  go get -u github.com/tomnomnom/waybackurls
- echo "${blue} [+] Started URL Fetching ${reset}"
+ echo "${blue} [+] Running Waybackurls for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
 fi
 echo " "
@@ -68,12 +68,12 @@ echo " "
 #Gau
 if [ -f ~/go/bin/gau ]
 then
- echo "${magenta} [+] Running Gau ${reset}"
+ echo "${magenta} [+] Running Gau for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau  >> ~/reconizer/$DOM/Archivescan/gau.txt
 else
  echo "${blue} [+] Installing Gaus ${reset}"
  go get -u github.com/lc/gau
- echo "${blue} [+] Started URL Fetching ${reset}"
+ echo "${blue} [+] Running Gau for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/Archivescan/gau.txt
 fi
 echo " "
@@ -90,6 +90,6 @@ echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo "${red} [+] Thank you for using R3C0Nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
