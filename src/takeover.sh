@@ -49,7 +49,7 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Started Subdomain Takeover Scanning ${reset}"
+echo "${blue} [+] Started Subdomain Takeover and S3 Bucket Takeover Scanning ${reset}"
 echo " "
 
 #nuclei
@@ -57,12 +57,12 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 if [ -f ~/go/bin/nuclei ]
 then
-  echo "${magenta} [+] Running nuclei ${reset}"
+  echo "${magenta} [+] Running nuclei for finding potential takeovers${reset}"
   nuclei -update-templates
   nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
 else
   echo "${blue} [+] Installing nuclei ${reset}"
-  echo "${magenta} [+] Running nuclei ${reset}"
+  echo "${magenta} [+] Running nuclei for finding potential takeovers${reset}"
   go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
   nuclei -update-templates
   nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
