@@ -55,8 +55,8 @@ then
   nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
 else
   echo "${blue} [+] Installing nuclei ${reset}"
-  echo "${magenta} [+] Running nuclei for finding potential takeovers${reset}"
   go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+  echo "${magenta} [+] Running nuclei for finding potential takeovers${reset}"
   nuclei -update-templates
   nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
 fi
