@@ -151,6 +151,8 @@ else
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf interestingEXT | tee -a ~/reconizer/$DOM/GF_Patterns/interesting_extensions.txt
  cat  ~/reconizer/$DOM/Archivescan/sorted.txt | gf debug_logic | tee -a ~/reconizer/$DOM/GF_Patterns/debug_logic.txt
 fi
+
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${blue} [+] Succesfully saved the results${reset}"
 echo " "
