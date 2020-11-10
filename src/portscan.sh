@@ -71,26 +71,26 @@ fi
 echo "${magenta} [+] Running grepcidr for removing hosts behind WAF${reset}"
 cloudflare="173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 162.158.0.0/15 104.16.0.0/12 172.64.0.0/13 131.0.72.0/22"
 for ip in $(cat ~/reconizer/$DOM/Port_Scan/resolved_ips.txt); do
-grepcidr "$cloudflare" < (echo "$ip") >/dev/null && echo "${red} [!] $ip is protected by Cloudflare ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/afterremovecloudflare.txt
+echo $ip | grepcidr "$cloudflare" >/dev/null && echo "${red} [!] $ip is protected by Cloudflare ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/afterremovecloudflare.txt
 done
 
 #Removing IP behind Incapsula
 incapsula="199.83.128.0/21 198.143.32.0/19 149.126.72.0/21 103.28.248.0/22 45.64.64.0/22 185.11.124.0/22 192.230.64.0/18 107.154.0.0/16 45.60.0.0/16 45.223.0.0/16"
 for ip in $(cat ~/reconi
 zer/$DOM/Port_Scan/afterremovecloudflare.txt); do
-	grepcidr "$incapsula" < (echo "$ip") >/dev/null && echo "${red} [!] $ip is protected by Incapsula ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/afterremoveincapsula.txt
+echo $ip | grepcidr "$incapsula" >/dev/null && echo "${red} [!] $ip is protected by Incapsula ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/afterremoveincapsula.txt
 done
 
 #Removing IP behind Sucuri
 sucuri="185.93.228.0/24 185.93.229.0/24 185.93.230.0/24 185.93.231.0/24 192.124.249.0/24 192.161.0.0/24 192.88.134.0/24 192.88.135.0/24 193.19.224.0/24 193.19.225.0/24 66.248.200.0/24 66.248.201.0/24 66.248.202.0/24 66.248.203.0/24"
 for ip in $(cat ~/reconizer/$DOM/Port_Scan/afterremoveincapsula.txt); do
-	grepcidr "$sucuri" < (echo "$ip") >/dev/null && echo "${red} [!] $ip is protected by Sucuri ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/afterremovesucuri.txt
+echo $ip | grepcidr "$sucuri" >/dev/null && echo "${red} [!] $ip is protected by Sucuri ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/afterremovesucuri.txt
 done
 
 #Removing IP behind Akamai
 akamai="104.101.221.0/24 184.51.125.0/24 184.51.154.0/24 184.51.157.0/24 184.51.33.0/24 2.16.36.0/24 2.16.37.0/24 2.22.226.0/24 2.22.227.0/24 2.22.60.0/24 23.15.12.0/24 23.15.13.0/24 23.209.105.0/24 23.62.225.0/24 23.74.29.0/24 23.79.224.0/24 23.79.225.0/24 23.79.226.0/24 23.79.227.0/24 23.79.229.0/24 23.79.230.0/24 23.79.231.0/24 23.79.232.0/24 23.79.233.0/24 23.79.235.0/24 23.79.237.0/24 23.79.238.0/24 23.79.239.0/24 63.208.195.0/24 72.246.0.0/24 72.246.1.0/24 72.246.116.0/24 72.246.199.0/24 72.246.2.0/24 72.247.150.0/24 72.247.151.0/24 72.247.216.0/24 72.247.44.0/24 72.247.45.0/24 80.67.64.0/24 80.67.65.0/24 80.67.70.0/24 80.67.73.0/24 88.221.208.0/24 88.221.209.0/24 96.6.114.0/24"
 for ip in $(cat ~/reconizer/$DOM/Port_Scan/afterremovesucuri.txt); do
-	grepcidr "$akamai" < (echo "$ip") >/dev/null && echo "${red} [!] $ip is protected by Akamai ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/Final_IP_List.txt
+echo $ip | grepcidr "$akamai" >/dev/null && echo "${red} [!] $ip is protected by Akamai ${reset}" || echo "$ip" >> ~/reconizer/$DOM/Port_Scan/Final_IP_List.txt
 done
 
 #Removing Unnecassery files
