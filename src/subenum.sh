@@ -48,7 +48,7 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Started Subdomain Discovery ${reset}"
+echo "${blue} [+] Started Subdomain Enumeration ${reset}"
 echo " "
 
 #assefinder
