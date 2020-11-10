@@ -17,7 +17,7 @@ reset=`tput sgr0`
  ================== Anon-Artist ==================
 ${reset}\n"
 	echo -e "\tA. Subdomain Enumeration"
-	echo -e "\tB. Subdomain Takeover and S3 Bucket Takeover Scanning"
+	echo -e "\tB. Scanning for Subdomain Takeover"
 	echo -e "\tC. Port Scanning"
 	echo -e "\tD. Visual Recon"
 	echo -e "\tE. Content Discovery"
@@ -27,6 +27,7 @@ ${reset}\n"
 	echo -e "\tI. Scanning for JS files"
 	echo -e "\tJ. Nuclei Vulnerability Scanning"
 	echo -e "\tK. Github Recon"
+	echo -e "\tL. Scanning for S3 Buckets"
 	echo -e " "
 	echo -e "\t1. 101 Scan (FULL SCAN)\n"
 	echo -e "\t0. Exit Menu\n\n"
@@ -88,6 +89,11 @@ function jsrecon {
 	bash src/jsrecon.sh
 }
 
+function bucketrecon {
+	clear
+        bash src/bucketrecon.sh
+}
+
 function fullscan {
 	clear
 	echo -e "\n\t${red}=====================================${reset}\n"
@@ -134,6 +140,9 @@ do
 	
 	K | k)
 	githubrecon ;;
+	
+	L | l)
+	bucketrecon ;;
 	
 	1)
 	fullscan ;;
