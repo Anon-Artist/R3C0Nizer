@@ -35,7 +35,7 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Started Nuclei Scanning ${reset}"
+echo "${blue} [+] Started Nuclei Vulnerability Scanning ${reset}"
 echo " "
 
 #nuclei
