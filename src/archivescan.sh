@@ -18,13 +18,6 @@ else
   mkdir ~/reconizer
 fi
 
-if [ -d ~/reconizer/tools ]
-then
-  echo " "
-else
-  mkdir ~/reconizer/tools 
-fi
-
 if [ -d ~/reconizer/$DOM/Archivescan ]
 then
   echo " "
