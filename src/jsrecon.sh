@@ -18,13 +18,6 @@ else
   mkdir ~/reconizer
 fi
 
-if [ -d ~/reconizer/tools ]
-then
-  echo " "
-else
-  mkdir ~/reconizer/tools 
-fi
-
 if [ -d ~/reconizer/$DOM/Archivescan ]
 then
   echo " "
@@ -69,7 +62,7 @@ if [ -f ~/reconizer/$DOM/Archivescan/waybackurls.txt]
 then
  echo "${magenta} [+] Already done Waybackurls ${reset}"
 else
- echo "${blue} [+] Running Waybackurls ${reset}"
+ echo "${blue} [+] Running Waybackurls for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | waybackurls >> ~/reconizer/$DOM/Archivescan/waybackurls.txt 
  echo "${blue} [+] Succesfully saved as waybackurls.txt ${reset}"
 fi
@@ -90,7 +83,7 @@ if [~/reconizer/$DOM/Archivescan/gau.txt ]
 then
  echo "${magenta} [+] Already done Gau ${reset}"
 else
- echo "${blue} [+] Running Gau ${reset}"
+ echo "${blue} [+] Running Gau for finding archive based assets${reset}"
  cat  ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | gau >> ~/reconizer/$DOM/Archivescan/gau.txt
  echo "${blue} [+] Succesfully saved as gau.txt ${reset}"
 fi
@@ -99,15 +92,14 @@ echo " "
 #uniquesubdomains
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${blue} [+] fetching unique URL ${reset}"
-echo " "
 if [ -f ~/reconizer/$DOM/Archivescan/sorted.txt ]
 then
  echo " "
 else
  cat ~/reconizer/$DOM/Archivescan/waybackurls.txt ~/reconizer/$DOM/Archivescan/gau.txt | sort -u >> ~/reconizer/$DOM/Archivescan/sorted.txt
+ echo "${blue} [+] Succesfully saved as sorted.txt ${reset}"
+ echo " "
 fi
-echo " "
 
 #Gathering Js Files
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
@@ -131,6 +123,7 @@ if [ -f ~/go/bin/subjs ]
 else
   echo "${magenta} [+] Already installed subjs ${reset}"
 fi
+
 echo " "
 echo "${blue} [+] Started Gathering Live JsFiles-links ${reset}"
 echo " "
@@ -139,6 +132,10 @@ cat ~/reconizer/$DOM/JSscan/mixed_jsfile_links_from_archives.txt | httpx -silent
 cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt | httpx -silent | subjs | anew | tee -a ~/reconizer/$DOM/JSscan/jsfile_links_from_subjs.txt
 rm -rf ~/reconizer/$DOM/JSscan/mixed_jsfile_links_from_archives.txt
 cat ~/reconizer/$DOM/JSscan/jsfile_links_from_archives.txt ~/reconizer/$DOM/JSscan/jsfile_links_from_subjs.txt | sort -u jsfiles_result.txt
+
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${blue} [+] Succesfully saved the results${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
