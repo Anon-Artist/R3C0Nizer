@@ -17,13 +17,6 @@ else
   mkdir ~/reconizer
 fi
 
-if [ -d ~/reconizer/tools ]
-then
-  echo " "
-else
-  mkdir ~/reconizer/tools 
-fi
-
 if [ -d ~/reconizer/$DOM/nuclei ]
 then
   echo " "
@@ -64,6 +57,11 @@ else
   nuclei -l ~/reconizer/$DOM/Subdomains/all-alive-subs.txt -t ~/nuclei-templates/files/ -o ~/reconizer/$DOM/nuclei/files_results.txt
   nuclei -l ~/reconizer/$DOM/Subdomains/all-alive-subs.txt -t ~/nuclei-templates/vulnerabilities/ -o ~/reconizer/$DOM/nuclei/vulnerabilities_results.txt
 fi
+
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo ""
+echo "${blue} [+] Successfully saved the results"
+echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
