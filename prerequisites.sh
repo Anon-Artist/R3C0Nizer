@@ -20,7 +20,7 @@ ${RESET}\n"
 python_install(){
     if [ ! -x "$(command -v python)" ]; then
         echo -e "${RED}[+] Python is Installed...${RESET}"
-        sudo apt-get install -y python
+        sudo apt-get install -y python -qq > /dev/null
 	echo -e "${RED}[+] Python is Installed...${RESET}"
     else   
         echo -e "${RED}[+] Python is installed...${RESET}"
@@ -30,7 +30,7 @@ python_install(){
 python3_install(){
     if [ ! -x "$(command -v python3)" ]; then
         echo -e "${RED}[+] Python3 is Installing...${RESET}"
-        sudo apt-get install -y python3
+        sudo apt-get install -y python3 -qq > /dev/null
 	echo -e "${RED}[+] Python3 is Installed...${RESET}"
     else   
         echo -e "${RED}[+] Python3 is installed...${RESET}"
@@ -48,7 +48,7 @@ go_install(){
 chromium_install(){
     if [ ! -x "$(command -v chromium)" ]; then
         echo -e "${RED}[+] Chromium is Installing...${RESET}"
-        sudo apt install -y chromium
+        sudo apt install -y chromium -qq > /dev/null
 	echo -e "${RED}[+] Chromium is Installed...${RESET}"
     else
         echo -e "${RED}[+] Chromium is installed...${RESET}"
@@ -58,7 +58,7 @@ chromium_install(){
 docker_install(){
     if [ ! -x "$(command -v docker)" ]; then
 	echo -e "${RED}[+] Docker is Installing...${RESET}"   
-	sudo apt-get install docker
+	sudo apt-get install -y docker -qq > /dev/null
 	echo -e "${RED}[+] Docker is Installed...${RESET}"
     else   
 	echo -e "${RED}[+] Docker is installed...${RESET}"
