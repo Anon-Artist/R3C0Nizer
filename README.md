@@ -17,14 +17,13 @@ cd R3C0Nizer
 
 chmod +x prerequisites.sh reconizer.sh
 
-./prerequisites.sh  # Run this script once this will check all dependencies are installed or not.
-                    # If not installed it will install all the prerequisites mentioned automatically.
-                            
-./reconizer.sh      # This is the recon script which will install necessary tools in its first run if it is not already installed.
+./prerequisites.sh
+
+./reconizer.sh
 ```
 
 # About :superhero_man:
-* R3C0Nizer is a tool written in Bash, which was a subdomain enumeration tool, now is the first ever CLI based menu-driven automated web application recon tool  which gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools.
+* R3C0Nizer is a tool written in Bash, which was a subdomain enumeration tool, now is the first ever CLI based menu-driven automated web application recon tool which install every tools and dependencies while running each modules so that the user dont want to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools.
 
 # Workflow :muscle:
 ![workflow](workflow.svg)
@@ -44,14 +43,14 @@ chmod +x prerequisites.sh reconizer.sh
 
 # Expecting Contributions :monocle_face:
 
-R3C0Nizer expecting contributions for improving the script such as 
+R3C0Nizer is expecting contributions for improving the script such as 
 
  - Adding more assets
  - Data storage Buckets based scans
       
 # Authors and Thanks :sunglasses:
 
-This script makes use of tools developed by the following people/team
+This script make use of tools developed by the following people/team
 - https://github.com/tomnomnom
 - https://github.com/epi052
 - https://github.com/aboul3la
