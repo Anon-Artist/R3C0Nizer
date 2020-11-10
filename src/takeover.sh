@@ -70,6 +70,10 @@ fi
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
+echo "${blue} [+] Successfully saved as takeover_results.txt"
+echo " "
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
 echo "${red} [+] Thank you for using R3C0nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
