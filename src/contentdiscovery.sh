@@ -60,7 +60,7 @@ fi
 #feroxbuster
 if [ -f ~/go/bin/feroxbuster ]
 then
- echo "${magenta} [+] Running Feroxbuster ${reset}"
+ echo "${magenta} [+] Running Feroxbuster for content discovery${reset}"
  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
  feroxbuster --url $url -w ~/reconizer/tools/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --depth 3 --threads 300 --output ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt
@@ -70,10 +70,13 @@ else
  wget https://github.com/epi052/feroxbuster/releases/download/v1.5.2/x86_64-linux-feroxbuster.zip -P ~/reconizer/tools/feroxbuster
  unzip ~/reconizer/tools/feroxbuster/x86_64-linux-feroxbuster.zip -d ~/go/bin/
  chmod 777 ~/go/bin/feroxbuster
- echo "${magenta} [+] Running Feroxbuster ${reset}"
+ echo "${magenta} [+] Running Feroxbuster for content discovery${reset}"
  for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
  reg=$(echo $url | sed -e 's;https\?://;;' | sed -e 's;/.*$;;')
  feroxbuster --url $url -w ~/reconizer/tools/common.txt -x php asp aspx jsp py txt conf config bak backup swp old db zip sql --depth 3 --threads 300 --output ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt
+done
+fi
+
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
 echo "${blue} [+] Succesfully saved as content_discovery_result.txt ${reset}"
@@ -91,13 +94,13 @@ cat ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt | grep 401 |
 cat ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt | grep 403 | awk '{print $2}' > ~/reconizer/$DOM/Content_Discovery/status_code_403.txt
 cat ~/reconizer/$DOM/Content_Discovery/content_discovery_result.txt | grep 405 | awk '{print $2}' > ~/reconizer/$DOM/Content_Discovery/status_code_405.txt
 echo " "
-echo "${blue} [+] Succesfully saved according to status codes ${reset}"
-echo " "
-done
-fi
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo "${blue} [+] Succesfully saved the results according to their status codes ${reset}"
+echo " "
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+echo "${red} [+] Thank you for using R3C0Nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 
