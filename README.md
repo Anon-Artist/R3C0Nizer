@@ -23,18 +23,18 @@ chmod +x prerequisites.sh reconizer.sh
 ```
 
 # About :superhero_man:
-* R3C0Nizer is a tool written in Bash, which was a subdomain enumeration tool, now is the first ever CLI based menu-driven automated web application recon tool which install every tools and dependencies while running each modules so that the user dont want to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools.
+* R3C0Nizer is a tool written in Bash, which was a subdomain enumeration tool, now is the first ever CLI based menu-driven automated web application recon tool which install every tools and dependencies while running each modules so that the user need not to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools. HAPPY HACKING.
 
 # Workflow :muscle:
 ![workflow](workflow.svg)
 
 # Notes :writing_hand:
 
-* Recommended : Update and upgrade your operating system.
 * Create git-hound config before running Github Recon or 101 Scan. Check documentation of git-hound https://github.com/tillson/git-hound#setup.
+* Recommended : Update and upgrade your operating system.
 * Optional : Add API keys in config of subfinder and findomain for tweaking perfomance.
-* Portscanner do not scan for port 80 and 443, so if the Ip only contains only these two ports then the result will not produce for the ip.
-* Recursive scan is implemented in feroxbuster with depth 3 on all live subdomains.
+* Portscanner does not scan for port 80 and 443 so if the IP only contains only these two ports then the result will not be produce for the IP.
+* Recursive scan is implemented in feroxbuster with depth of 3 on all alive subdomains.
 * Do not look for nmap and naabu rust scan do the best.
 * Used feroxbuster instead of ffuf,wfuzz because feroxbuster is more faster.
 
