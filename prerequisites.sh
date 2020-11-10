@@ -54,8 +54,8 @@ chromium_install(){
 
 docker_install(){
     if [ ! -x "$(command -v docker)" ]; then
-	sudo chmod +x /src/docker_install.sh       
-	bash /src/docker_install.sh
+	sudo chmod +x src/docker_install.sh       
+	bash src/docker_install.sh
 	echo -e "${RED}[+] Docker is Installed...${RESET}"
     else   
 	echo -e "${RED}[+] Docker is installed...${RESET}"
