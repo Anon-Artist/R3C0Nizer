@@ -102,37 +102,37 @@ do
 	case $option in
 	0)
 	break ;;
-	A)
+	A | a)
 	subenum ;;
 	
-	B)
+	B | b)
 	takeover_check ;;
 
-	C)
+	C | c)
 	portscanning ;;
 
-	D)
+	D | d)
 	visualrecon ;;
 	
-	E)
+	E | e)
 	contentdisc;;
 
-	F)
+	F | f)
 	paramining ;;
 	
-	G)
+	G | g)
 	Archivescan ;;
 	
-	H)
+	H | h)
 	gfpattern ;;
 	
-	I)
+	I | i)
 	jsrecon ;;
 	
-	J)
+	J | j)
 	nucleicall ;;
 	
-	K)
+	K | k)
 	githubrecon ;;
 	
 	1)
