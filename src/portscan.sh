@@ -62,7 +62,7 @@ fi
 #grepcidr
 if [ ! -x "$(command -v grepcidr)" ]; then
 	echo "${blue} [+] Installing grepcidr ${reset}"
-	sudo apt-get install getcidr
+	sudo apt-get install grepcidr
 else
 	echo ""
 fi
