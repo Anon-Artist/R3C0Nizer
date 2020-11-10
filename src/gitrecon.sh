@@ -44,7 +44,7 @@ echo "${red}
 |                                                 |
  ================== Anon-Artist ==================
 ${reset}"
-echo "${blue} [+] Starting Github Recon ${reset}"
+echo "${blue} [+] Started Github Recon ${reset}"
 echo " "
 
 #github_recon
