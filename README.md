@@ -46,7 +46,6 @@ chmod +x prerequisites.sh reconizer.sh
 R3C0Nizer is expecting contributions for improving the script such as 
 
  - Adding more assets
- - Data storage Buckets based scans
       
 # Authors and Thanks :sunglasses:
 
