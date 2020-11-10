@@ -141,7 +141,7 @@ echo " "
 #uniquesubdomains
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] Fetching unique domains ${reset}"
+echo "${magenta} [+] Fetching unique domains ${reset}"
 echo " "
 cat ~/reconizer/$DOM/Subdomains/*.txt | sort -u >> ~/reconizer/$DOM/Subdomains/unique.txt
 echo "${blue} [+] Succesfully saved as unique.txt ${reset}"
