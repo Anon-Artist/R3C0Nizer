@@ -56,14 +56,14 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 if [ -d ~/reconizer/tools/ParamSpider/ ]
 then
-  echo "${magenta} [+] Running ParamSpider ${reset}"
+  echo "${magenta} [+] Running ParamSpider for mining endpoints${reset}"
   for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
   python3 ~/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
   done
 else
   echo "${blue} [+] Installing ParamSpider ${reset}"
-  echo "${magenta} [+] Running ParamSpider ${reset}"
   git clone https://github.com/devanshbatham/ParamSpider ~/reconizer/tools/ParamSpider/
+  echo "${magenta} [+] Running ParamSpider for mining endpoints${reset}"
   for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
   python3 ~/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
   done
@@ -75,6 +75,6 @@ echo "${blue} [+] Succesfully saved the results  ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo "${red} [+] Thank you for using R3C0Nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
