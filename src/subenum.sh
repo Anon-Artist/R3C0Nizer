@@ -166,6 +166,6 @@ echo " "
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-echo "${red} [+] Thank you for using R3C0nizer${reset}"
+echo "${red} [+] Thank you for using R3C0Nizer${reset}"
 echo ""
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
