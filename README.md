@@ -39,7 +39,7 @@ chmod +x prerequisites.sh reconizer.sh
 * Used feroxbuster instead of ffuf,wfuzz because feroxbuster is more faster.
 
 # Demo :boom:
-![Demo](screen.png)
+![Demo](demo.png)
 
 # Expecting Contributions :monocle_face:
 
