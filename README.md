@@ -23,7 +23,7 @@ chmod +x prerequisites.sh reconizer.sh
 ```
 
 # About :superhero_man:
-* R3C0Nizer is a tool written in Bash, which was a subdomain enumeration tool, now is the first ever CLI based menu-driven automated web application recon tool which install every tools and dependencies while running each modules so that the user need not to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools. HAPPY HACKING.
+* R3C0Nizer is the first ever CLI based menu-driven automated web application recon tool which install every tools and dependencies while running each modules so that the user need not to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools. HAPPY HACKING.
 
 # Workflow :muscle:
 ![workflow](workflow.svg)
@@ -63,6 +63,10 @@ This script make use of tools developed by the following people/team
 - https://github.com/RustScan
 - https://github.com/lc
 - https://github.com/tillson
+- https://github.com/stevenvachon
+- https://github.com/sa7mon
+- https://github.com/s0md3v
+
 
 # Contributors :star_struck:
  
@@ -75,6 +79,7 @@ This script make use of tools developed by the following people/team
    <td align="center"><a href="https://github.com/Conscript-Security"><img src="https://avatars.githubusercontent.com/Conscript-Security?s=100" width="100px;" alt=""/><br /><sub><b>Jagan</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/4">Contributions</h6></a></td>
    <td align="center"><a href="https://github.com/v1nc1d4"><img src="https://avatars.githubusercontent.com/v1nc1d4?s=100" width="100px;" alt=""/><br /><sub><b>Anurag M</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/5">Contributions</h6></a></td>
    <td align="center"><a href="https://github.com/Shahul-Aboobaker"><img src="https://avatars.githubusercontent.com/Shahul-Aboobaker?s=100" width="100px;" alt=""/><br /><sub><b>Shahul Aboobaker</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/pull/11">Contributions</h6></a></td>
+   <td align="center"><a href="https://github.com/GovindPalakkal"><img src="https://avatars.githubusercontent.com/GovindPalakkal?s=100" width="100px;" alt=""/><br /><sub><b>Govind Palakkal</b></sub></a><br /><h6><a href="https://github.com/Anon-Artist/R3C0Nizer/blob/main/src/blcscan.sh">Contributions</h6></a></td>
 </table>
 
 -------
