@@ -62,7 +62,7 @@ function contentdisc {
         bash src/contentdiscovery.sh 
 }
 
-function Archivescan {
+function archivescan {
 	clear
 	bash src/archivescan.sh
 }
@@ -154,7 +154,7 @@ do
 	corsscan ;;
 	
 	L | l)
-	Archivescan ;;
+	archivescan ;;
 	
 	M | m)
 	gfpattern ;;
