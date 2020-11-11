@@ -20,14 +20,16 @@ ${reset}\n"
 	echo -e "\tB. Scanning for Subdomain Takeover"
 	echo -e "\tC. Port Scanning"
 	echo -e "\tD. Visual Recon"
-	echo -e "\tE. Content Discovery"
-	echo -e "\tF. Parameter Fuzzing"
-	echo -e "\tG. Archive based Scanning"
-	echo -e "\tH. GF Pattern based Scanning"
-	echo -e "\tI. Scanning for JS files"
-	echo -e "\tJ. Nuclei Vulnerability Scanning"
-	echo -e "\tK. Github Recon"
-	echo -e "\tL. Scanning for S3 Buckets"
+	echo -e "\tE. Github Recon"
+	echo -e "\tF. Content Discovery"
+	echo -e "\tG. Parameter Fuzzing"
+	echo -e "\tH. Nuclei Vulnerability Scanning"
+	echo -e "\tI. Scanning for S3 Buckets"
+	echo -e "\tJ. Scanning for Broken Links"
+	echo -e "\tK. Scanning for CORS Misconfiguration"
+	echo -e "\tL. Archive based Scanning"
+	echo -e "\tM. GF Pattern based Scanning"
+	echo -e "\tN. Scanning for JS files"
 	echo -e " "
 	echo -e "\t1. 101 Scan (FULL SCAN)\n"
 	echo -e "\t0. Exit Menu\n\n"
@@ -94,6 +96,16 @@ function bucketrecon {
         bash src/bucketrecon.sh
 }
 
+function blcscan {
+	clear
+        bash src/blcscan.sh
+}
+
+function corsscan {
+	clear
+        bash src/corsscan.sh
+}
+
 function fullscan {
 	clear
 	echo -e "\n\t${red}=====================================${reset}\n"
@@ -119,30 +131,36 @@ do
 
 	D | d)
 	visualrecon ;;
-	
-	E | e)
-	contentdisc;;
 
-	F | f)
-	paramining ;;
-	
-	G | g)
-	Archivescan ;;
-	
-	H | h)
-	gfpattern ;;
-	
-	I | i)
-	jsrecon ;;
-	
-	J | j)
-	nucleicall ;;
-	
-	K | k)
+	E | e)
 	githubrecon ;;
 	
-	L | l)
+	F | f)
+	contentdisc;;
+
+	G | g)
+	paramining ;;
+	
+	H | h)
+	nucleicall ;;
+	
+	I | i)
 	bucketrecon ;;
+	
+	J | j)
+	blcscan ;;
+	
+	K | k)
+	corsscan ;;
+	
+	L | l)
+	Archivescan ;;
+	
+	M | m)
+	gfpattern ;;
+	
+	N | n)
+	jsrecon ;;
 	
 	1)
 	fullscan ;;
