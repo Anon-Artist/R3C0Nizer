@@ -58,7 +58,7 @@ chromium_install(){
 docker_install(){
     if [ ! -x "$(command -v docker)" ]; then
 	echo -e "${RED}[+] Docker is Installing...${RESET}"   
-	sudo apt-get install -y docker -qq > /dev/null
+	curl -s -L https://get.docker.com/ | bash
 	echo -e "${RED}[+] Docker is Installed...${RESET}"
     else   
 	echo -e "${RED}[+] Docker is installed...${RESET}"
