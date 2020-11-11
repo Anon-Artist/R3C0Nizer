@@ -26,7 +26,7 @@ chmod +x prerequisites.sh reconizer.sh
 * R3C0Nizer is the first ever CLI based menu-driven automated web application recon tool which install every tools and dependencies while running each modules so that the user need not to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools. HAPPY HACKING.
 
 # Workflow :muscle:
-![workflow](workflow.svg)
+![workflow](complete_workflow.svg)
 
 # Notes :writing_hand:
 
