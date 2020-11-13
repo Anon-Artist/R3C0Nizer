@@ -78,7 +78,9 @@ function takeover_check {
 
 function githubrecon {
 	clear
-	bash src/gitrecon.sh
+	echo -e "\n\t${red}=====================================${reset}\n"
+        echo -e "\tWorking on the fix"
+	echo -e "\t${red}=====================================${reset}"
 }
 
 function gfpattern {
