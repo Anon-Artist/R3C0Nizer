@@ -75,13 +75,6 @@ function takeover_check {
 	bash src/takeover.sh
 }
 
-function githubrecon {
-	clear
-	echo -e "\n\t${red}=====================================${reset}\n"
-        echo -e "\tWorking on the fix"
-	echo -e "\t${red}=====================================${reset}"
-}
-
 function gfpattern {
 	clear
 	bash src/GF_pattern.sh
