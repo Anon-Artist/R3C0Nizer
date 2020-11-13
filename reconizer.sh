@@ -20,16 +20,15 @@ ${reset}\n"
 	echo -e "\tB. Scanning for Subdomain Takeover"
 	echo -e "\tC. Port Scanning"
 	echo -e "\tD. Visual Recon"
-	echo -e "\tE. Github Recon"
-	echo -e "\tF. Content Discovery"
-	echo -e "\tG. Parameter Fuzzing"
-	echo -e "\tH. Nuclei Vulnerability Scanning"
-	echo -e "\tI. Scanning for S3 Buckets"
-	echo -e "\tJ. Scanning for Broken Links"
-	echo -e "\tK. Scanning for CORS Misconfiguration"
-	echo -e "\tL. Archive based Scanning"
-	echo -e "\tM. GF Pattern based Scanning"
-	echo -e "\tN. Scanning for JS files"
+	echo -e "\tE. Content Discovery"
+	echo -e "\tF. Parameter Fuzzing"
+	echo -e "\tG. Nuclei Vulnerability Scanning"
+	echo -e "\tH. Scanning for S3 Buckets"
+	echo -e "\tI. Scanning for Broken Links"
+	echo -e "\tJ. Scanning for CORS Misconfiguration"
+	echo -e "\tK. Archive based Scanning"
+	echo -e "\tL. GF Pattern based Scanning"
+	echo -e "\tM. Scanning for JS files"
 	echo -e " "
 	echo -e "\t1. 101 Scan (FULL SCAN)\n"
 	echo -e "\t0. Exit Menu\n\n"
@@ -133,35 +132,32 @@ do
 
 	D | d)
 	visualrecon ;;
-
-	E | e)
-	githubrecon ;;
 	
-	F | f)
+	E | e)
 	contentdisc;;
 
-	G | g)
+	F | f)
 	paramining ;;
 	
-	H | h)
+	G | g)
 	nucleicall ;;
 	
-	I | i)
+	H | h)
 	bucketrecon ;;
 	
-	J | j)
+	I | i)
 	blcscan ;;
 	
-	K | k)
+	J | j)
 	corsscan ;;
 	
-	L | l)
+	K | k)
 	archivescan ;;
 	
-	M | m)
+	L | l)
 	gfpattern ;;
 	
-	N | n)
+	M | m)
 	jsrecon ;;
 	
 	1)
