@@ -58,14 +58,14 @@ if [ -d ~/reconizer/tools/ParamSpider/ ]
 then
   echo "${magenta} [+] Running ParamSpider for mining endpoints${reset}"
   for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
-  python3 ~/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
+  python3 ~/reconizer/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
   done
 else
   echo "${blue} [+] Installing ParamSpider ${reset}"
   git clone https://github.com/devanshbatham/ParamSpider ~/reconizer/tools/ParamSpider/
   echo "${magenta} [+] Running ParamSpider for mining endpoints${reset}"
   for url in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);do
-  python3 ~/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
+  python3 ~/reconizer/tools/ParamSpider/paramspider.py -d $url -o ~/reconizer/$DOM/Param_mining/$url.txt
   done
 fi
 echo " "
