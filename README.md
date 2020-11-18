@@ -31,9 +31,8 @@ chmod +x prerequisites.sh reconizer.sh
 # Notes :writing_hand:
 
 * Always enter the domain like target.xyz  
-* All outputs can be found in your home directory/reconizer/target.xyz 
-* You can run any module at any time you wish to do but for every target you should complete the subdomain enumeration first.
-* Create git-hound config before running Github Recon or 101 Scan. Check documentation of git-hound https://github.com/tillson/git-hound#setup.
+* All outputs can be found in your home_directory/reconizer/target.xyz folder
+* You can run any module at any time you wish to do but for every target you should complete the subdomain enumeration first (not applicable for 101 Scan).
 * Recommended : Update and upgrade your operating system.
 * Optional : Add API keys in config of subfinder and findomain for tweaking perfomance.
 * Portscanner does not scan for port 80 and 443 so if the IP only contains only these two ports then the result will not be produce for the IP.
