@@ -102,10 +102,7 @@ function corsscan {
 
 function fullscan {
 	clear
-	echo -e "\n\t${red}=====================================${reset}\n"
-        echo -e "\t101 Scan is not implemented yet"
-	echo -e "\tHang tight it will be released soon\n"
-	echo -e "\t${red}=====================================${reset}"
+        bash src/101scan.sh
 }
 
 while [ 1 ]
