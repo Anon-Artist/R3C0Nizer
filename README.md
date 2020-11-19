@@ -43,6 +43,17 @@ chmod +x prerequisites.sh reconizer.sh
 # Demo :boom:
 ![Demo](demo.png)
 
+# Notification Feature :dizzy:
+* Added Telegram notification after completing 101 Scan.
+For this remove # from line 591 to 595 and copy .tgcreds from R3C0Nizer to home_directory/reconizer/.tgcreds
+Create a private telegram channel and create a bot using @botfather (https://telegram.me/botfather) copy token and paste in .tgcreds 
+add the bot to telegram channel set privilege as an admin.
+use /start to start bot
+`sudo apt-get install jq`
+`curl -s -X POST https://api.telegram.org/bot<TOKEN>/getUpdates | jq .`
+This command will give chat id paste it in .tgcreds
+Run 101 scan and enjoy notification feature
+
 # Expecting Contributions :monocle_face:
 
 R3C0Nizer is expecting contributions for improving the script such as 
