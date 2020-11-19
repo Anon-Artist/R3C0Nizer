@@ -588,8 +588,8 @@ echo " "
 echo "${blue} [+] Succesfully saved as content_discovery_result.txt ${reset}"
 echo " "
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
-#CHAT_ID=$(cat ~/reconizer/.tgcreds | grep "telegram_bot" | awk {'print $3'})
-#TOKEN=$(cat ~/reconizer/.tgcreds | grep "telegram_id" | awk {'print $3'})
+#CHAT_ID=$(cat ~/reconizer/.tgcreds | grep "chat_id" | awk {'print $3'})
+#TOKEN=$(cat ~/reconizer/.tgcreds | grep "token" | awk {'print $3'})
 #MESSAGE="Scanning finished for $DOM"
 #URL="https://api.telegram.org/bot$TOKEN/sendMessage"
 #curl -s -X POST $URL -d chat_id=$CHAT_ID -d text="$MESSAGE" > /dev/null
