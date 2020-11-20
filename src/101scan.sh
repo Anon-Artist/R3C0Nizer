@@ -238,7 +238,7 @@ then
   nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
 else
   echo "${blue} [+] Installing nuclei ${reset}"
-  go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+  go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
   echo "${magenta} [+] Running nuclei for finding potential takeovers${reset}"
   nuclei -update-templates
   nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
@@ -259,7 +259,7 @@ then
   nuclei -l ~/reconizer/$DOM/Subdomains/all-alive-subs.txt -t ~/nuclei-templates/vulnerabilities/ -c 200 -o ~/reconizer/$DOM/nuclei/vulnerabilities_results.txt
 else
   echo "${blue} [+] Installing nuclei ${reset}"
-  go get -u github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+  go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
   echo "${magenta} [+] Running nuclei ${reset}"
   nuclei -update-templates
   nuclei -l ~/reconizer/$DOM/Subdomains/all-alive-subs.txt -t ~/nuclei-templates/cves/ -c 200 -o ~/reconizer/$DOM/nuclei/cves_results.txt
