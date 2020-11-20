@@ -54,7 +54,7 @@ if [ -f ~/reconizer/tools/S3Scanner/s3scanner.py ]
 then
   echo "${magenta} [+] Running S3Scanner for S3 Bucket Enumeration${reset}"
   python3 ~/reconizer/tools/S3Scanner/s3scanner.py ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt &> ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
-  cat ~/recon/$1/$1-s3scanner.txt | grep "\[found\]" | cut -d" "  -f9- | tee -a ~/reconizer/bentley.com/S3_Bucket_Recon/s3_result.txt
+  cat ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt | grep "\[found\]" | cut -d" "  -f9- | tee -a ~/reconizer/$DOM/S3_Bucket_Recon/s3_result.txt
   rm -rf ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
 else
   echo "${blue} [+] Installing S3Scanner ${reset}"
@@ -62,7 +62,7 @@ else
   pip install -r ~/reconizer/tools/S3Scanner/requirements.txt
   echo "${magenta} [+] Running S3Scanner for S3 Bucket Enumeration${reset}"
   python3 ~/reconizer/tools/S3Scanner/s3scanner.py ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt &> ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
-  cat ~/recon/$1/$1-s3scanner.txt | grep "\[found\]" | cut -d" "  -f9- | tee -a ~/reconizer/bentley.com/S3_Bucket_Recon/s3_result.txt
+  cat ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt | grep "\[found\]" | cut -d" "  -f9- | tee -a ~/reconizer/$DOM/S3_Bucket_Recon/s3_result.txt
   rm -rf ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
 fi
 
