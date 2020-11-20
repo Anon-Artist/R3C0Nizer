@@ -84,7 +84,7 @@ else
  go get -u github.com/lc/gau
 fi
 echo " "
-if [~/reconizer/$DOM/Archivescan/gau.txt ]
+if [ -f ~/reconizer/$DOM/Archivescan/gau.txt ]
 then
  echo "${magenta} [+] Already done Gau ${reset}"
 else
