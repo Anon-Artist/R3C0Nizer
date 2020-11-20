@@ -295,18 +295,18 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo " "
 echo "${blue} [+] Succesfully saved the results ${reset}"
 echo " "
-#dnsprobe
+#dnsx
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
-if [ -f ~/go/bin/dnsprobe ]
+if [ -f ~/go/bin/dnsx ]
 then
  echo "${magenta} [+] Running dnsprobe for resolving IP's${reset}"
- cat ~/reconizer/$DOM/Subdomains/unique.txt | dnsprobe | awk {'print $2'} | sort -u > ~/reconizer/$DOM/Port_Scan/resolved_ips.txt
+ dnsx -l ~/reconizer/$DOM/Subdomains/unique.txt -resp-only | sort -u > ~/reconizer/$DOM/Port_Scan/resolved_ips.txt
 else
  echo "${magenta} [+] Installing dnsprobe ${reset}"
- go get -u -v github.com/projectdiscovery/dnsprobe
+ go get -u -v github.com/projectdiscovery/dnsx/cmd/dnsx
  echo "${magenta} [+] Running dnsprobe for resolving IP's${reset}"
- cat ~/reconizer/$DOM/Subdomains/unique.txt | dnsprobe | awk {'print $2'} | sort -u > ~/reconizer/$DOM/Port_Scan/resolved_ips.txt
+ dnsx -l ~/reconizer/$DOM/Subdomains/unique.txt -resp-only | sort -u > ~/reconizer/$DOM/Port_Scan/resolved_ips.txt
 fi
 #grepcidr
 echo " "
