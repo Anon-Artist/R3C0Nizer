@@ -19,7 +19,7 @@ ${RESET}\n"
 
 python_install(){
     if [ ! -x "$(command -v python)" ]; then
-        echo -e "${RED}[+] Python is Installed...${RESET}"
+        echo -e "${RED}[+] Python is Installing...${RESET}"
         sudo apt-get install -y python -qq > /dev/null
 	echo -e "${RED}[+] Python is Installed...${RESET}"
     else   
