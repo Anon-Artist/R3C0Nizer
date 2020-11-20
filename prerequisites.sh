@@ -39,7 +39,8 @@ python3_install(){
 
 go_install(){
 	echo -e "${RED}[+] GO is Installing...${RESET}"
-	sudo apt-get install -y golang -qq > /dev/null
+	sudo apt-get install snap -qq > /dev/null
+	snap install go --classic > /dev/null
 	echo -e "${RED}[+] GO is Installed...${RESET}"
 	echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
 	source ~/.bashrc
