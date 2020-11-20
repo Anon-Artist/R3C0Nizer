@@ -48,6 +48,7 @@ then
   done
 else
   echo "${blue} [+] Installing BLC ${reset}"
+  sudo apt-get install npm
   npm install broken-link-checker -g
   echo "${magenta} [+] Running BLC for checking Broken links${reset}"
   for domains in $(cat ~/reconizer/$DOM/Subdomains/all-alive-subs.txt);
