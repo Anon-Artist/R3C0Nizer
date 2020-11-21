@@ -45,7 +45,7 @@ chmod +x prerequisites.sh reconizer.sh
 
 # Notification Feature :dizzy:
 Added Telegram notification to notify completion of 101 Scan in a domain.
-* For this remove # from line 591 to 595 from src/101scan.sh 
+* For this remove # from line 612 to 616 from src/101scan.sh 
 * Copy .tgcreds from R3C0Nizer to home_directory/reconizer/.tgcreds
 * Create a private telegram channel and create a bot using @botfather (https://telegram.me/botfather) copy token and paste in .tgcreds 
 * Add the bot to telegram channel set privilege as an admin.
