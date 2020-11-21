@@ -100,6 +100,13 @@ then
 else
   mkdir ~/reconizer/$DOM/Content_Discovery 
 fi
+if [ -d ~/reconizer/$DOM/Visual_Recon ]
+then
+  echo " "
+else
+  mkdir ~/reconizer/$DOM/Visual_Recon
+fi
+
 echo "${red}
  =================================================
 |   ____  _____  ____ ___  _   _ _                |
@@ -271,6 +278,19 @@ echo "${yellow} ---------------------------------- xxxxxxxx --------------------
 echo ""
 echo "${blue} [+] Successfully saved the results"
 echo ""
+#screenshotting
+echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
+echo " "
+if [ -f ~/go/bin/aquatone ]
+then
+  echo "${magenta} [+] Running Aquatone for screenshotting alive subdomains${reset}"
+  cat ~/reconizer/$DOM/Subdomains/unique.txt | aquatone -http-timeout 10000 -scan-timeout 300 -ports xlarge -out ~/reconizer/$DOM/Visual_Recon
+else
+  echo "${blue} [+] Installing Aquatone ${reset}"
+  go get github.com/michenriksen/aquatone
+  echo "${magenta} [+] Running Aquatone for screenshotting alive subdomains${reset}"
+  cat ~/reconizer/$DOM/Subdomains/unique.txt | aquatone -http-timeout 10000 -scan-timeout 300 -ports xlarge -out ~/reconizer/$DOM/Visual_Recon
+fi
 #blc
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 if [ -f /usr/local/bin/blc ]
