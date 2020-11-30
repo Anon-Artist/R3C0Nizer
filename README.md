@@ -15,7 +15,9 @@ git clone https://github.com/Anon-Artist/R3C0Nizer
 
 cd R3C0Nizer
 
-chmod +x reconizer.sh
+chmod +x reconizer.sh prerequisites.sh
+
+./prerequisites.sh
 
 ./reconizer.sh
 ```
