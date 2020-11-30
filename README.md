@@ -19,6 +19,7 @@ chmod +x reconizer.sh
 
 ./reconizer.sh
 ```
+# Read Wiki its important
 
 # About :superhero_man:
 * R3C0Nizer is the first ever CLI based menu-driven automated web application B-Tier recon framework which install every tools and dependencies while running each modules so that the user need not to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools. HAPPY HACKING.
@@ -31,6 +32,9 @@ chmod +x reconizer.sh
 R3C0Nizer is expecting contributions for improving the script such as 
 
  - Adding more assets
+ 
+# Demo :boom:
+![Demo](demo.png)
 
 # Contributors :star_struck:
  
