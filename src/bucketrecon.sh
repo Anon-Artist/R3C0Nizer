@@ -53,7 +53,7 @@ echo " "
 if [ -f ~/reconizer/tools/S3Scanner/s3scanner.py ]
 then
   echo "${magenta} [+] Running S3Scanner for S3 Bucket Enumeration${reset}"
-  python3 ~/reconizer/tools/S3Scanner/s3scanner.py ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt &> ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
+  python ~/reconizer/tools/S3Scanner/s3scanner.py ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt &> ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
   cat ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt | grep "\[found\]" | cut -d" "  -f9- | tee -a ~/reconizer/$DOM/S3_Bucket_Recon/s3_result.txt
   rm -rf ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
 else
@@ -61,7 +61,7 @@ else
   git clone https://github.com/sa7mon/S3Scanner ~/reconizer/tools/S3Scanner
   pip install -r ~/reconizer/tools/S3Scanner/requirements.txt
   echo "${magenta} [+] Running S3Scanner for S3 Bucket Enumeration${reset}"
-  python3 ~/reconizer/tools/S3Scanner/s3scanner.py ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt &> ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
+  python ~/reconizer/tools/S3Scanner/s3scanner.py ~/reconizer/$DOM/Subdomains/protoless-all-alive-subs.txt &> ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
   cat ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt | grep "\[found\]" | cut -d" "  -f9- | tee -a ~/reconizer/$DOM/S3_Bucket_Recon/s3_result.txt
   rm -rf ~/reconizer/$DOM/S3_Bucket_Recon/s3_temp_result.txt
 fi
