@@ -8,6 +8,14 @@
 |                                                 |
  ================= Anon-Artist ===================    
 ```
+# About :superhero_man:
+* R3C0Nizer is the first ever CLI based menu-driven automated web application B-Tier recon framework which install every tools and dependencies while running each modules so that the user need not to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools. HAPPY HACKING.
+
+# Prerequisires :grin:
+- python and python3
+- golang
+- docker
+- chromium or chromium-browser
 
 # Usage :clinking_glasses:
 ```
@@ -24,9 +32,6 @@ source ~/.bashrc
 ./reconizer.sh
 ```
 # Read Wiki its important
-
-# About :superhero_man:
-* R3C0Nizer is the first ever CLI based menu-driven automated web application B-Tier recon framework which install every tools and dependencies while running each modules so that the user need not to install any tools manually and R3C0Nizer is used to gather some assets/informations which should help you to the next step with latest updated, fastest and efficient tools. HAPPY HACKING.
 
 # Workflow :muscle:
 ![workflow](Workflow.svg)
