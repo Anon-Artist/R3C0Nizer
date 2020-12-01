@@ -25,7 +25,7 @@ cd R3C0Nizer
 
 chmod +x reconizer.sh 
 
-echo "export PATH=$PATH:~/.go/bin" | sudo tee -a ~/.bashrc
+echo "export PATH=$PATH:~/go/bin" | sudo tee -a ~/.bashrc
 
 source ~/.bashrc
 
