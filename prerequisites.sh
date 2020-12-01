@@ -19,7 +19,7 @@ ${RESET}\n"
 
 python_install(){
     if [ ! -x "$(command -v python)" ]; then
-        echo -e "${RED}[+] Python is Installed...${RESET}"
+        echo -e "${RED}[+] Python is Installing...${RESET}"
         sudo apt-get install -y python -qq > /dev/null
 	echo -e "${RED}[+] Python is Installed...${RESET}"
     else   
@@ -55,6 +55,16 @@ chromium_install(){
     fi
 }
 
+chromiumbrowser_install(){
+    if [ ! -x "$(command -v chromium-browser)" ]; then
+        echo -e "${RED}[+] Chromium is Installing...${RESET}"
+        sudo apt install -y chromium-browser -qq > /dev/null
+	echo -e "${RED}[+] Chromium is Installed...${RESET}"
+    else
+        echo -e "${RED}[+] Chromium is installed...${RESET}"
+    fi
+}
+
 docker_install(){
     if [ ! -x "$(command -v docker)" ]; then
 	echo -e "${RED}[+] Docker is Installing...${RESET}"   
@@ -67,10 +77,7 @@ docker_install(){
 
 dependencies_install(){
     echo -e "${RED}[+] Other Dependencies are installing...${RESET}"
-    dependecies="git gcc g++ make curl python-pip python3-pip libldns-dev libpcap-dev xsltproc apt-transport-https ca-certificates gnupg-agent software-properties-common"
-    for i in $dependencies; do
-        sudo apt-get install -y $i -qq > /dev/null
-    done
+        sudo apt-get install -y git gcc g++ make curl python-pip python3-pip libldns-dev libpcap-dev xsltproc apt-transport-https ca-certificates gnupg-agent software-properties-common -qq > /dev/null
     echo -e "${RED}[+] Other Dependencies are installed...${RESET}"
 }
 
