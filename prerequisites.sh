@@ -75,16 +75,20 @@ docker_install(){
     fi
 }
 
+sudo apt-get install -y python-pip -qq > /dev/null
+
 dependencies_install(){
     echo -e "${RED}[+] Other Dependencies are installing...${RESET}"
-        sudo apt-get install -y git gcc g++ make curl python-pip python3-pip libldns-dev libpcap-dev xsltproc apt-transport-https ca-certificates gnupg-agent software-properties-common -qq > /dev/null
+        sudo apt-get install -y git gcc g++ make curl python3-pip libldns-dev libpcap-dev xsltproc apt-transport-https ca-certificates gnupg-agent software-properties-common -qq > /dev/null
     echo -e "${RED}[+] Other Dependencies are installed...${RESET}"
 }
+
 
 python_install
 python3_install
 go_install
 chromium_install
+chromiumbrowser_install
 docker_install
 dependencies_install
 
