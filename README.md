@@ -15,9 +15,11 @@ git clone https://github.com/Anon-Artist/R3C0Nizer
 
 cd R3C0Nizer
 
-chmod +x reconizer.sh prerequisites.sh
+chmod +x reconizer.sh 
 
-./prerequisites.sh
+echo "export PATH=$PATH:~/.go/bin" | sudo tee -a ~/.bashrc
+
+source ~/.bashrc
 
 ./reconizer.sh
 ```
