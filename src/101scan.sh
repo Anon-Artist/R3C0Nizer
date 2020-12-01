@@ -190,23 +190,6 @@ echo " "
 echo "${blue} [+] Succesfully saved as findomain.txt  ${reset}"
 echo " "
 
-#Sublister
-echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
-echo " "
-if [ -d ~/reconizer/tools/Sublist3r/ ]
-then
-  echo "${magenta} [+] Running Sublist3r for subdomain enumeration${reset}"
-  python ~/reconizer/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/reconizer/$DOM/Subdomains/sublist3r.txt > /dev/null
-else
-  echo "${blue} [+] Installing Sublist3r ${reset}"
-  echo "${magenta} [+] Running Sublist3r for subdomain enumeration${reset}"
-  git clone https://github.com/aboul3la/Sublist3r.git ~/reconizer/tools/Sublist3r/
-  python ~/reconizer/tools/Sublist3r/sublist3r.py -d $DOM -t 10 -v -o ~/reconizer/$DOM/Subdomains/sublist3r.txt > /dev/null
-fi
-echo " "
-echo "${blue} [+] Succesfully saved as sublist3r.txt  ${reset}"
-echo " "
-
 #uniquesubdomains
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
 echo " "
