@@ -52,13 +52,13 @@ if [ -f ~/go/bin/nuclei ]
 then
   echo "${magenta} [+] Running nuclei for finding potential takeovers${reset}"
   nuclei -update-templates
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/takeovers/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
 else
   echo "${blue} [+] Installing nuclei ${reset}"
   go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
   echo "${magenta} [+] Running nuclei for finding potential takeovers${reset}"
   nuclei -update-templates
-  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/subdomain-takeover/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
+  nuclei -l ~/reconizer/$DOM/Subdomains/unique.txt -t ~/nuclei-templates/takeovers/ -o ~/reconizer/$DOM/Subdomain_takeovers/takeover_results.txt
 fi
 
 echo "${yellow} ---------------------------------- xxxxxxxx ---------------------------------- ${reset}"
